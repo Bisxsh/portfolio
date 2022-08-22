@@ -22,10 +22,10 @@ const Navbar = () => (
 export default Navbar;
 
 const NavbarContainer = styled.div`
-  margin: 10px;
+  margin-block: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   .image-container {
     aspect-ratio: 1;
