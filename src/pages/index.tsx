@@ -1,7 +1,12 @@
 import React from "react"
+import Navbar from "../components/navbar"
 
 const IndexPage = () => {
-  return <div>IndexPage</div>
+  return (
+    <div>
+      <Navbar />
+    </div>
+  )
 }
 
 export default IndexPage

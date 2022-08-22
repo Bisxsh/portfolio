@@ -28,7 +28,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  font: sans-serif;
+  font: "Poppins", sans-serif;
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
   overflow-y: scroll;
@@ -37,8 +37,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: sans-serif;
-  font-family: var(--font-sans);
+  font-family: "Poppins", sans-serif;
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
@@ -88,7 +87,6 @@ code,
 kbd,
 pre,
 samp {
-  font-family: var(--font-mono);
   font-size: 1em;
   line-height: inherit;
 }
@@ -201,7 +199,6 @@ code {
   background-color: var(--color-code-bg);
   border-radius: var(--border-radius);
   color: var(--color-code);
-  font-family: var(--font-mono);
   padding-bottom: 0.25em;
   padding-top: 0.25em;
   word-break: normal;
