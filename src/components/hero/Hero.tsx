@@ -2,18 +2,40 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 import { LargeButton } from "../Button";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <HeroContainer>
-      <div>
+      <motion.div
+        initial={{ x: -200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          default: {
+            duration: 0.7,
+          },
+        }}
+      >
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula.</Name>
         <SubText>
           I'm a student who likes to design and build things for the web.
         </SubText>
-        <LargeButton text="Download CV" />
-      </div>
+        <motion.div
+          initial={{ scale: 0.3, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            delay: 1,
+            default: {
+              duration: 0.7,
+            },
+          }}
+        >
+          <LargeButton text="Download CV" />
+        </motion.div>
+      </motion.div>
       <StaticImage
         src="../../images/hero_image.svg"
         alt="person coding"

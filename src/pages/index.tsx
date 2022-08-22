@@ -21,6 +21,7 @@ const IndexPage = () => {
 
       <div className="content">
         <MainContent />
+        <MainContent />
       </div>
     </PageContainer>
   );
