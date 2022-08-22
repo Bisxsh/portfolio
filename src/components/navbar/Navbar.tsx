@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Button } from "../Button";
 
 const Navbar = () => (
   <NavbarContainer>
@@ -13,7 +14,7 @@ const Navbar = () => (
       <NavOption>About</NavOption>
       <NavOption>Projects</NavOption>
       <NavOption>Contact</NavOption>
-      <NavButton>CV</NavButton>
+      <Button text="CV" />
     </NavContainer>
   </NavbarContainer>
 );
@@ -57,32 +58,4 @@ const NavContainer = styled.ul`
   font-size: var(--font-sm);
 
   color: #73777b;
-`;
-
-const NavButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-inline: 10px;
-  cursor: pointer;
-
-  font-weight: 400;
-  font-size: var(--font-sm);
-  color: var(--color-primary);
-
-  width: 70px;
-  height: 25px;
-
-  border: 2px solid #457b9d;
-  border-radius: 15px;
-
-  -webkit-transition: background-color 0.5s ease-in;
-  transition: background-color 0.5s ease-in;
-  -webkit-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
-
-  &:hover {
-    background-color: var(--color-primary);
-    color: white;
-  }
 `;
