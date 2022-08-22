@@ -12,7 +12,9 @@ const Navbar = () => {
     setMenuOpen(width > 600 ? true : false);
   }, [width]);
 
-  function toggleMenu() {}
+  function toggleMenu() {
+    setMenuOpen(o => !o);
+  }
 
   return (
     <NavbarContainer>
@@ -22,11 +24,14 @@ const Navbar = () => {
 
       <nav>
         {width < 600 && (
-          <StaticImage
-            src="../../images/menu.svg"
-            alt="menu"
-            className="nav--menu-button"
-          />
+          <div onClick={toggleMenu}>
+            <StaticImage
+              src="../../images/menu.svg"
+              alt="menu"
+              className="nav--menu-button"
+              onClick={toggleMenu}
+            />
+          </div>
         )}
         {menuOpen && (
           <NavContainer>
@@ -59,6 +64,7 @@ const NavbarContainer = styled.div`
   .nav--menu-button {
     margin-right: 20px;
     cursor: pointer;
+    z-index: 2;
   }
 `;
 
