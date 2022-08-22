@@ -6,7 +6,7 @@ import { LargeButton } from "../Button";
 const Hero = () => {
   return (
     <HeroContainer>
-      <div className="hero--left">
+      <div>
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula</Name>
         <SubText>
@@ -26,7 +26,6 @@ const Hero = () => {
 export default Hero;
 
 const HeroContainer = styled.div`
-  /* margin-top: 160px; */
   width: 100%;
   height: 90vh;
   display: flex;
@@ -35,25 +34,50 @@ const HeroContainer = styled.div`
 
   .hero--image {
     max-width: 750px;
+    min-width: 400px;
     aspect-ratio: initial;
     width: 40vw;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 10vh;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
 const Greeting = styled.p`
-  font-size: 20px;
+  font-size: var(--font-xl);
   color: #000000;
   margin: 0;
 `;
 
 const Name = styled.p`
   font-size: 50px;
-  color: var(--color-secondary);
+  color: var(--color-primary);
+
+  @media screen and (min-width: 1600px) {
+    font-size: 60px;
+  }
+  @media screen and (min-width: 2000px) {
+    font-size: 70px;
+  }
 `;
 
 const SubText = styled.p`
-  font-weight: 400;
   font-size: 24px;
   max-width: 400px;
   color: #000000;
+
+  @media screen and (min-width: 1600px) {
+    font-size: 36px;
+    max-width: 600px;
+  }
+  @media screen and (min-width: 2000px) {
+    font-size: 40px;
+    max-width: 700px;
+  }
 `;

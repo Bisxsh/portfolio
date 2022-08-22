@@ -6,6 +6,8 @@
   --color-secondary: #1d3557;
   --color-accent: #a8dadc;
   --color-code: #8a6534;
+  --font-xxl: 24px;
+  --font-xl: 20px;
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
@@ -216,4 +218,17 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+
+/* Font size scaling */
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --font-xxl: 28px;
+    --font-xl: 24px;
+    --font-lg: 20px;
+    --font-md: 18px;
+    --font-sm: 16px;
+    --font-sx: 14px;
+  }
 }
