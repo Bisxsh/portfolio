@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export function Button(props: any) {
-  return <ButtonBase>{props.text}</ButtonBase>;
+  return <ButtonBase className={props.setClassName}>{props.text}</ButtonBase>;
 }
 
 const ButtonBase = styled.div`

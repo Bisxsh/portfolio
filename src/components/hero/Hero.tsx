@@ -10,7 +10,7 @@ const Hero = () => {
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula.</Name>
         <SubText>
-          I'm a student who likes to design and build things for the web
+          I'm a student who likes to design and build things for the web.
         </SubText>
         <LargeButton text="Download CV" />
       </div>
