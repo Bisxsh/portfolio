@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MainContent from "../components/MainContent";
 import Navbar from "../components/navbar/Navbar";
 
 const IndexPage = () => {
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = () => {
+    var currentScrollPos = window.pageYOffset;
+    setShowNavbar(prevScrollpos > currentScrollPos);
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <PageContainer>
-      <Navbar />
+      <div className={`navbar-container ${showNavbar ? "" : "hidden"}`}>
+        <Navbar />
+      </div>
+
       <div className="content">
         <MainContent />
         <MainContent />
@@ -25,6 +37,18 @@ const PageContainer = styled.div`
 
   .content {
     grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .navbar-container {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--color-code-bg);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .hidden {
+    transform: translateY(-100px);
   }
 
   @media only screen and (max-width: 600px) {
