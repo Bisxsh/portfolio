@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Button } from "../Button";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { Squash as Hamburger } from "hamburger-react";
 
 const Navbar = () => {
   const { height, width } = useWindowDimensions();
@@ -23,16 +24,6 @@ const Navbar = () => {
       </div>
 
       <nav>
-        {width < 600 && (
-          <div onClick={toggleMenu}>
-            <StaticImage
-              src="../../images/menu.svg"
-              alt="menu"
-              className="nav--menu-button"
-              onClick={toggleMenu}
-            />
-          </div>
-        )}
         {menuOpen && (
           <NavContainer>
             <NavOption>Home</NavOption>
@@ -41,6 +32,11 @@ const Navbar = () => {
             <NavOption>Contact</NavOption>
             {width > 600 && <Button text="CV" setClassName="nav--button" />}
           </NavContainer>
+        )}
+        {width < 600 && (
+          <div className="nav--menu-button">
+            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+          </div>
         )}
       </nav>
     </NavbarContainer>
@@ -107,7 +103,7 @@ const NavContainer = styled.ul`
 
     padding: min(20vh, 10rem) 2em;
     flex-direction: column;
-    z-index: 1;
+    z-index: 0;
     justify-content: center;
     align-items: flex-start;
   }
