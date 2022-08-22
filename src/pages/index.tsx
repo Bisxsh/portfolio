@@ -18,9 +18,16 @@ const PageContainer = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  overflow-x: hidden;
 
   .content {
     grid-area: 1 / 2 / 2 / 3;
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    padding: 10px;
+    padding-left: 30px;
   }
 
   @media only screen and (min-width: 16000px) {

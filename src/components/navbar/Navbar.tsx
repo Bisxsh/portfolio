@@ -58,4 +58,8 @@ const NavContainer = styled.ul`
   font-size: var(--font-sm);
 
   color: #73777b;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;

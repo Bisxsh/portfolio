@@ -8,7 +8,7 @@ const Hero = () => {
     <HeroContainer>
       <div>
         <Greeting>Hi there 👋. My name is</Greeting>
-        <Name>Bisesh Sitaula</Name>
+        <Name>Bisesh Sitaula.</Name>
         <SubText>
           I'm a student who likes to design and build things for the web
         </SubText>
