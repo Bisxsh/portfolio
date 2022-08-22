@@ -7,9 +7,11 @@ const Hero = () => {
   return (
     <HeroContainer>
       <div className="hero--left">
-        <small className="">Hi my name is</small>
-        <h2>Bisesh Sitaula</h2>
-        <p>I'm a student who likes to design and build things for the web</p>
+        <Greeting>Hi there 👋. My name is</Greeting>
+        <Name>Bisesh Sitaula</Name>
+        <SubText>
+          I'm a student who likes to design and build things for the web
+        </SubText>
         <LargeButton text="Download CV" />
       </div>
       <StaticImage
@@ -24,7 +26,7 @@ const Hero = () => {
 export default Hero;
 
 const HeroContainer = styled.div`
-  margin-top: 120px;
+  margin-top: 160px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,4 +37,22 @@ const HeroContainer = styled.div`
     aspect-ratio: initial;
     width: 40vw;
   }
+`;
+
+const Greeting = styled.p`
+  font-size: 20px;
+  color: #000000;
+  margin: 0;
+`;
+
+const Name = styled.p`
+  font-size: 50px;
+  color: var(--color-secondary);
+`;
+
+const SubText = styled.p`
+  font-weight: 400;
+  font-size: 24px;
+  max-width: 400px;
+  color: #000000;
 `;

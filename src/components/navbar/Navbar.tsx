@@ -22,7 +22,7 @@ const Navbar = () => (
 export default Navbar;
 
 const NavbarContainer = styled.div`
-  margin-block: 10px;
+  margin-block: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;

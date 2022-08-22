@@ -39,7 +39,8 @@ export function LargeButton(props: any) {
 
 const LargeButtonComponent = styled(ButtonBase)`
   width: 320px;
-  height: 70px;
+  height: 60px;
   border-radius: 20px;
   font-size: var(--font-lg);
+  margin: 0;
 `;
