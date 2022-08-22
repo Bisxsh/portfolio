@@ -1,11 +1,11 @@
-import { StaticImage } from "gatsby-plugin-image";
 import styled, { css } from "styled-components";
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Navbar = () => (
   <NavbarContainer>
     <div>
-      <StaticImage src="../images/logo.png" alt="logo" />
+      <StaticImage src="../../images/logo.png" alt="logo" />
     </div>
 
     <NavContainer>
@@ -13,6 +13,7 @@ const Navbar = () => (
       <NavOption>About</NavOption>
       <NavOption>Projects</NavOption>
       <NavOption>Contact</NavOption>
+      <NavButton>CV</NavButton>
     </NavContainer>
   </NavbarContainer>
 );
@@ -55,4 +56,15 @@ const NavContainer = styled.ul`
   font-size: 14px;
 
   color: #73777b;
+`;
+
+const NavButton = styled.div`
+  display: grid;
+  align-items: center;
+  margin-inline: 10px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 36px;
+  color: var(--color-primary);
 `;

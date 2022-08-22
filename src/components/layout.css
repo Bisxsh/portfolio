@@ -6,10 +6,6 @@
   --color-secondary: #1d3557;
   --color-accent: #a8dadc;
   --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
@@ -30,7 +26,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  font: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
   overflow-y: scroll;
@@ -39,7 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
