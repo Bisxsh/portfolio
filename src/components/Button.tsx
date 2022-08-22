@@ -22,14 +22,16 @@ const ButtonBase = styled.div`
   border: 2px solid #457b9d;
   border-radius: 10px;
 
-  -webkit-transition: background-color 1s ease;
-  transition: background-color 1s ease;
-  -webkit-transition: color 1s ease;
-  transition: color 1s ease;
+  transition: all 0.2s ease-in-out;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  -webkit-transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-code-bg);
   }
 `;
 
