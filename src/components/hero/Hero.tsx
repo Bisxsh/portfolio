@@ -33,7 +33,7 @@ const Hero = () => {
             },
           }}
         >
-          <LargeButton text="Download CV" />
+          <LargeButton text="Download CV" setClassName="hero--button" />
         </motion.div>
       </motion.div>
       <StaticImage
@@ -65,6 +65,14 @@ const HeroContainer = styled.div`
     }
   }
 
+  @media screen and (min-width: 2600px) {
+    .hero--button {
+      width: 800px;
+      padding: 50px;
+      border-radius: 40px;
+      font-size: 40px;
+    }
+  }
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     justify-content: center;
@@ -87,6 +95,9 @@ const Name = styled.p`
   @media screen and (min-width: 2000px) {
     font-size: 70px;
   }
+  @media screen and (min-width: 2600px) {
+    font-size: 90px;
+  }
 `;
 
 const SubText = styled.p`
@@ -101,5 +112,9 @@ const SubText = styled.p`
   @media screen and (min-width: 2000px) {
     font-size: 40px;
     max-width: 700px;
+  }
+  @media screen and (min-width: 2600px) {
+    font-size: 50px;
+    max-width: 1000px;
   }
 `;

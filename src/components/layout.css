@@ -233,3 +233,13 @@ pre tt:after {
     --font-sx: 14px;
   }
 }
+@media screen and (min-width: 2160px) {
+  :root {
+    --font-xxl: 38px;
+    --font-xl: 34px;
+    --font-lg: 30px;
+    --font-md: 28px;
+    --font-sm: 26px;
+    --font-sx: 24px;
+  }
+}

@@ -65,6 +65,17 @@ const NavbarContainer = styled.div`
     cursor: pointer;
     z-index: 2;
   }
+  @media screen and (min-width: 2600px) {
+    .image-container {
+      width: 80px;
+    }
+    .nav--button {
+      margin-inline: 20px;
+      font-size: 48px;
+      width: 200px;
+      padding: 40px;
+    }
+  }
 `;
 
 const NavOption = styled.li`
@@ -83,6 +94,10 @@ const NavOption = styled.li`
   @media screen and (max-width: 600px) {
     margin-block: 15px;
     font-size: 20px;
+  }
+  @media screen and (min-width: 2600px) {
+    font-size: 48px;
+    margin-inline: 20px;
   }
 `;
 const NavContainer = styled.ul`

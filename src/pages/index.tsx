@@ -41,14 +41,18 @@ const PageContainer = styled.div`
 
   .navbar-container {
     position: fixed;
-    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
     z-index: 999;
     background-color: var(--color-code-bg);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .hidden {
-    transform: translateY(-100px);
+    transform: translateY(-200px);
   }
 
   @media only screen and (max-width: 600px) {

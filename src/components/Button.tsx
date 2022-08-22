@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export function Button(props: any) {
   return (
-    <ButtonBase className={props.setClassName}>
+    <ButtonBase>
       <motion.button
-        className="button"
+        className={`button ${props.setClassName}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -52,7 +52,7 @@ export function LargeButton(props: any) {
   return (
     <LargeButtonComponent>
       <motion.button
-        className="button large"
+        className={`button large ${props.setClassName}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
