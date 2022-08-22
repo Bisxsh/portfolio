@@ -2,7 +2,7 @@
   --border-radius: 4px;
   --color-text: #73777b;
   --color-primary: #457b9d;
-  --color-code-bg: #f1faee;
+  --color-code-bg: #fbfff9;
   --color-secondary: #1d3557;
   --color-accent: #a8dadc;
   --color-code: #8a6534;
@@ -41,6 +41,7 @@ body {
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
+  background-color: var(--color-code-bg);
 }
 a {
   background-color: transparent;

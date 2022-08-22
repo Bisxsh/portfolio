@@ -19,26 +19,28 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <div className="image-container">
-        <StaticImage src="../../images/logo.png" alt="logo" />
-      </div>
+      <div className="nav--container">
+        <div className="image-container">
+          <StaticImage src="../../images/logo.png" alt="logo" />
+        </div>
 
-      <nav>
-        {menuOpen && (
-          <NavContainer>
-            <NavOption>Home</NavOption>
-            <NavOption>About</NavOption>
-            <NavOption>Projects</NavOption>
-            <NavOption>Contact</NavOption>
-            {width > 600 && <Button text="CV" setClassName="nav--button" />}
-          </NavContainer>
-        )}
-        {width < 600 && (
-          <div className="nav--menu-button">
-            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
-          </div>
-        )}
-      </nav>
+        <nav>
+          {menuOpen && (
+            <NavContainer>
+              <NavOption>Home</NavOption>
+              <NavOption>About</NavOption>
+              <NavOption>Projects</NavOption>
+              <NavOption>Contact</NavOption>
+              {width > 600 && <Button text="CV" setClassName="nav--button" />}
+            </NavContainer>
+          )}
+          {width < 600 && (
+            <div className="nav--menu-button">
+              <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+            </div>
+          )}
+        </nav>
+      </div>
     </NavbarContainer>
   );
 };
@@ -46,10 +48,20 @@ const Navbar = () => {
 export default Navbar;
 
 const NavbarContainer = styled.div`
-  margin-block: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--color-code-bg);
+
+  .nav--container {
+    margin-block: 30px;
+    background-color: transparent;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .image-container {
     aspect-ratio: 1;

@@ -5,7 +5,7 @@ import Navbar from "./navbar/Navbar";
 const MainContent = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
     </div>
   );

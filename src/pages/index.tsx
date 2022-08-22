@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import MainContent from "../components/MainContent";
+import Navbar from "../components/navbar/Navbar";
 
 const IndexPage = () => {
   return (
     <PageContainer>
+      <Navbar />
       <div className="content">
+        <MainContent />
         <MainContent />
       </div>
     </PageContainer>
