@@ -1,6 +1,6 @@
-import { StaticImage } from "gatsby-plugin-image"
-import styled, { css } from "styled-components"
-import React from "react"
+import { StaticImage } from "gatsby-plugin-image";
+import styled, { css } from "styled-components";
+import React from "react";
 
 const Navbar = () => (
   <NavbarContainer>
@@ -15,9 +15,9 @@ const Navbar = () => (
       <NavOption>Contact</NavOption>
     </NavContainer>
   </NavbarContainer>
-)
+);
 
-export default Navbar
+export default Navbar;
 
 const NavbarContainer = styled.div`
   margin: 10px;
@@ -29,13 +29,21 @@ const NavbarContainer = styled.div`
     aspect-ratio: 1;
     width: 30px;
   }
-`
+`;
 
 const NavOption = styled.li`
   background: transparent;
   margin-inline: 10px;
   margin-bottom: 0;
-`
+  cursor: pointer;
+
+  -webkit-transition: color 0.2s ease-in; /* For Safari 3.0 to 6.0 */
+  transition: color 0.2s ease-in; /* For modern browsers */
+
+  &:hover {
+    color: var(--color-primary);
+  }
+`;
 const NavContainer = styled.ul`
   list-style: none;
   display: flex;
@@ -47,4 +55,4 @@ const NavContainer = styled.ul`
   font-size: 14px;
 
   color: #73777b;
-`
+`;
