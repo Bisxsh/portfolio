@@ -1,16 +1,3 @@
-import { ReactComponent as Typescript } from "../../../images/skills/typescript.svg";
-import { ReactComponent as Javascript } from "../../../images/skills/javascript.svg";
-import { ReactComponent as Html5 } from "../../../images/skills/html5.svg";
-import { ReactComponent as Css } from "../../../images/skills/css.svg";
-import { ReactComponent as ReactOriginal } from "../../../images/skills/react-original.svg";
-import { ReactComponent as ReactNative } from "../../../images/skills/react-native.svg";
-import { ReactComponent as Angular } from "../../../images/skills/angular.svg";
-import { ReactComponent as Java } from "../../../images/skills/java-original.svg";
-import { ReactComponent as Android } from "../../../images/skills/android.svg";
-import { ReactComponent as Git } from "../../../images/skills/git-original.svg";
-import { ReactComponent as Figma } from "../../../images/skills/figma.svg";
-import { ReactComponent as Gradle } from "../../../images/skills/gradle.svg";
-import { ReactComponent as Maven } from "../../../images/skills/maven.svg";
 import React from "react";
 
 export const TypescriptIcon = (
@@ -101,6 +88,20 @@ export const MavenIcon = (
   <img
     width={50}
     src={require("../../../images/skills/maven.svg").default}
+    alt="Maven"
+  />
+);
+export const GatsbyIcon = (
+  <img
+    width={50}
+    src={require("../../../images/skills/gatsby.svg").default}
+    alt="Maven"
+  />
+);
+export const StyledComponentsIcon = (
+  <img
+    width={50}
+    src={require("../../../images/skills/styled-components.svg").default}
     alt="Maven"
   />
 );

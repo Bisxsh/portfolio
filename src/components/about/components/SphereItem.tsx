@@ -14,6 +14,8 @@ import {
   FigmaIcon,
   GradleIcon,
   MavenIcon,
+  GatsbyIcon,
+  StyledComponentsIcon,
 } from "./SkillImages";
 
 const skillsMap = new Map<string, JSX.Element>([
@@ -30,6 +32,8 @@ const skillsMap = new Map<string, JSX.Element>([
   ["Figma", FigmaIcon],
   ["Gradle", GradleIcon],
   ["Maven", MavenIcon],
+  ["Gatsby", GatsbyIcon],
+  ["Styled Components", StyledComponentsIcon],
 ]);
 
 export interface SphereItem {
@@ -41,10 +45,8 @@ export function getSkillsObjects(): SphereItem[] {
   let list: SphereItem[] = [];
   for (let [key, value] of skillsMap) {
     let textComponent: JSX.Element = <p>{key}</p>;
-    console.log(value);
     let imageComponent: JSX.Element = value;
     list.push({ textComponent, imageComponent });
-    console.log(imageComponent);
   }
   return list;
 }
