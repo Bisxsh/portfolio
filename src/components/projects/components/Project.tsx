@@ -12,7 +12,7 @@ const Project = (props: any) => {
     <ProjectContainer>
       {props.left && <motion.div {...EnterFromLeft}>{image}</motion.div>}
 
-      <TextContainer>
+      <TextContainer className={props.left ? "shiftLeft" : "shiftRight"}>
         <motion.h1 className="heading" {...EnterFromLeft}>
           {props.name}
         </motion.h1>
@@ -54,6 +54,7 @@ const ProjectContainer = styled.div`
 
   img {
     max-width: 640px;
+    border-radius: 10px;
   }
 
   .heading {
@@ -62,14 +63,21 @@ const ProjectContainer = styled.div`
     margin: 0;
     margin-bottom: 20px;
   }
+
+  .shiftRight {
+    transform: translateX(60px);
+    align-items: flex-start;
+  }
+  .shiftLeft {
+    transform: translateX(-60px);
+    align-items: flex-end;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  transform: translateX(-60px);
 
   .alignRight {
     text-align: end;
