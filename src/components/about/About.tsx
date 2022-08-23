@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Heading from "../heading";
 import Experience from "./components/Experience";
@@ -23,9 +23,7 @@ const About = () => {
           </motion.p>
         </AboutText>
 
-        <SphereWrapper>
-          <TagSphereComponent />
-        </SphereWrapper>
+        <TagSphereComponent />
       </AboutWrapper>
 
       <Heading text="Experience" left={true} />
@@ -44,11 +42,6 @@ const About = () => {
     </>
   );
 };
-
-const SphereWrapper = styled.div`
-  aspect-ratio: 1;
-  width: 600px;
-`;
 
 const AboutText = styled.div`
   font-size: var(--font-xl);

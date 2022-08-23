@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TagSphere } from "react-tag-sphere";
+import styled from "styled-components";
 import {
   TypescriptIcon,
   JavascriptIcon,
@@ -91,28 +92,43 @@ export const TagSphereComponent = () => {
   //   console.log(imageIndexes);
   // }, [firstNum]);
 
+  const [showImages, setShowImages] = useState(true);
+
   function getTags() {
-    return skillsObjects.map(s => s.imageComponent).filter(n => n != null);
+    return skillsObjects
+      .map(s => {
+        if (showImages) return s.imageComponent;
+        return s.textComponent;
+      })
+      .filter(n => n != null);
   }
 
   return (
-    <TagSphere
-      style={{
-        color: "#457b9d",
-        fontWeight: "400",
-        fontSize: "1.2rem",
-        fontFamily: "Poppins",
-      }}
-      className="about--sphere"
-      blur={true}
-      blurMultiplier={0.2}
-      keepRollingAfterMouseOut={false}
-      userSelect={true}
-      initialSpeed={2}
-      maxSpeed={2}
-      fullWidth={true}
-      fullHeight={true}
-      tags={getTags()}
-    />
+    <SphereWrapper onClick={() => setShowImages(i => !i)}>
+      <TagSphere
+        style={{
+          color: "#457b9d",
+          fontWeight: "400",
+          fontSize: "1.2rem",
+          fontFamily: "Poppins",
+        }}
+        className="about--sphere"
+        blur={true}
+        blurMultiplier={0.2}
+        keepRollingAfterMouseOut={false}
+        userSelect={true}
+        initialSpeed={2}
+        maxSpeed={2}
+        fullWidth={true}
+        fullHeight={true}
+        tags={getTags()}
+      />
+    </SphereWrapper>
   );
 };
+
+const SphereWrapper = styled.div`
+  aspect-ratio: 1;
+  width: 600px;
+  cursor: pointer;
+`;
