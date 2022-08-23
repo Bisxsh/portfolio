@@ -21,6 +21,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-parallax-tilt": "^1.7.58",
+    "react-tag-sphere": "^1.0.3",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
