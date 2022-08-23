@@ -92,7 +92,7 @@ export const TagSphereComponent = () => {
   // }, [firstNum]);
 
   function getTags() {
-    return skillsObjects.map(s => s.imageComponent);
+    return skillsObjects.map(s => s.imageComponent).filter(n => n != null);
   }
 
   return (

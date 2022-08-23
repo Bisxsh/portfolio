@@ -43,6 +43,7 @@ const HeadingWrapper: any = styled.div`
   .heading {
     font-size: 128px;
     line-height: 192px;
+    margin-bottom: 0;
 
     color: rgba(29, 53, 87, 0.25);
   }

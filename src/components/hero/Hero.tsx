@@ -52,10 +52,12 @@ export default Hero;
 
 const HeroContainer = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  margin-bottom: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 
   .hero--image {
     max-width: 750px;
