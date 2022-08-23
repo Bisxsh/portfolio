@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { LargeButton } from "../Button";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 
 const Hero = () => {
   return (
@@ -27,7 +28,7 @@ const Hero = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{
-            delay: 1,
+            delay: 1.5,
             default: {
               duration: 0.7,
             },
@@ -36,11 +37,13 @@ const Hero = () => {
           <LargeButton text="Download CV" setClassName="hero--button" />
         </motion.div>
       </motion.div>
-      <StaticImage
-        src="../../images/hero_image.svg"
-        alt="person coding"
-        className="hero--image"
-      />
+      <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
+        <StaticImage
+          src="../../images/hero_image.svg"
+          alt="person coding"
+          className="hero--image"
+        />
+      </Tilt>
     </HeroContainer>
   );
 };
