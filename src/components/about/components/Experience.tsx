@@ -23,12 +23,7 @@ const Experience = (props: any) => {
         {...EnterWithFade({ delay: 0.5 })}
       >
         {props.description.map(d => (
-          <motion.li
-            className="description-list-item"
-            {...EnterWithFade({ delay: 0.5 })}
-          >
-            {d}
-          </motion.li>
+          <li className="description-list-item">{d}</li>
         ))}
       </motion.ul>
     </ExperienceWrapper>

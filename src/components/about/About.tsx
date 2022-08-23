@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Heading from "../heading";
 import Experience from "./components/Experience";
 import { TagSphereComponent } from "./components/TagSphereComponent";
+import { motion } from "framer-motion";
+import { EnterWithFade } from "../MotionProp";
 
 const About = () => {
   return (
@@ -10,15 +12,15 @@ const About = () => {
       <Heading text="About Me" left={false} />
       <AboutWrapper>
         <AboutText>
-          <p>
+          <motion.p {...EnterWithFade({})}>
             Hey! My name is Bisesh and I am currently a student at the
             University of Bath.
-          </p>
-          <p>
+          </motion.p>
+          <motion.p {...EnterWithFade({})}>
             Outside of coding (and learning to code), you’ll find me playing
             basketball, playing guitar or powering through my ever-growing
             Netflix list.
-          </p>
+          </motion.p>
         </AboutText>
 
         <SphereWrapper>

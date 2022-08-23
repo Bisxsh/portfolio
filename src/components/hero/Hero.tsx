@@ -4,20 +4,12 @@ import styled from "styled-components";
 import { LargeButton } from "../Button";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import { EnterFromLeft } from "../MotionProp";
 
 const Hero = () => {
   return (
     <HeroContainer>
-      <motion.div
-        initial={{ x: -200, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          default: {
-            duration: 0.7,
-          },
-        }}
-      >
+      <motion.div {...EnterFromLeft({})}>
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula.</Name>
         <SubText>
