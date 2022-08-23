@@ -9,7 +9,7 @@ import { EnterFromLeft } from "../MotionProp";
 const Hero = () => {
   return (
     <HeroContainer>
-      <motion.div {...EnterFromLeft({})}>
+      <motion.div className="hero--left" {...EnterFromLeft({})}>
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula.</Name>
         <SubText>
@@ -20,7 +20,7 @@ const Hero = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{
-            delay: 1.5,
+            delay: 1,
             default: {
               duration: 0.7,
             },
@@ -50,6 +50,10 @@ const HeroContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+
+  .hero--left {
+    margin-left: 1vw;
+  }
 
   .hero--image {
     max-width: 750px;

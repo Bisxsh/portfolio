@@ -27,15 +27,12 @@ const IndexPage = () => {
 };
 
 const PageContainer = styled.div`
-  display: grid;
-  grid-template-columns: 10vw 1fr 10vw;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  overflow-x: hidden;
-
   .content {
-    grid-area: 1 / 2 / 2 / 3;
+    padding: 0 10vw;
+
+    @media screen and (max-width: 1500px) {
+      padding: 0 5vw;
+    }
   }
 
   .navbar-container {

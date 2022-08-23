@@ -3,14 +3,19 @@ import { motion } from "framer-motion";
 import { EnterFromLeft, EnterFromRight, EnterWithFade } from "../../MotionProp";
 import styled from "styled-components";
 import ProjectLink, { ButtonType } from "./ProjectLink";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Project = (props: any) => {
   let image = <img src={props.imagePath} alt="Project Screenshot" />;
+  const { height, width } = useWindowDimensions();
+
   //TODO fix framer animation
 
   return (
     <ProjectContainer>
-      {props.left && <motion.div {...EnterFromLeft}>{image}</motion.div>}
+      {(props.left || width < 1200) && (
+        <motion.div {...EnterFromLeft}>{image}</motion.div>
+      )}
 
       <TextContainer className={props.left ? "shiftLeft" : "shiftRight"}>
         <motion.h1 className="heading" {...EnterFromLeft}>
@@ -41,7 +46,9 @@ const Project = (props: any) => {
         </motion.div>
       </TextContainer>
 
-      {!props.left && <motion.div {...EnterFromRight}>{image}</motion.div>}
+      {!props.left && width > 1200 && (
+        <motion.div {...EnterFromRight}>{image}</motion.div>
+      )}
     </ProjectContainer>
   );
 };
@@ -51,6 +58,11 @@ const ProjectContainer = styled.div`
   justify-content: center;
   color: var(--color-secondary);
   width: 100%;
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   img {
     max-width: 640px;
@@ -64,13 +76,15 @@ const ProjectContainer = styled.div`
     margin-bottom: 20px;
   }
 
-  .shiftRight {
-    transform: translateX(60px);
-    align-items: flex-start;
-  }
-  .shiftLeft {
-    transform: translateX(-60px);
-    align-items: flex-end;
+  @media screen and (min-width: 1300px) {
+    .shiftRight {
+      transform: translateX(60px);
+      align-items: flex-start;
+    }
+    .shiftLeft {
+      transform: translateX(-60px);
+      align-items: flex-end;
+    }
   }
 `;
 
@@ -79,8 +93,10 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  .alignRight {
-    text-align: end;
+  @media screen and (min-width: 1300px) {
+    .alignRight {
+      text-align: end;
+    }
   }
 
   .description-container {
@@ -99,6 +115,13 @@ const TextContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .links-container {
+      justify-content: start;
+      margin-bottom: 40px;
+    }
   }
 `;
 

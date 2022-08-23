@@ -4,6 +4,7 @@ import Heading from "../heading";
 import Project from "./components/Project";
 import todoImage from "./images/to-do-list.png";
 import pomodoroImage from "./images/pomodoro-timer.png";
+import SmallProject from "./components/SmallProject";
 
 const Projects = () => {
   return (
@@ -39,6 +40,8 @@ const Projects = () => {
         figma="https://www.figma.com/file/GQTxnhir2TgDUJDulqsMWV/Todo-list?node-id=0%3A1"
         dribbble="https://dribbble.com/shots/18943466-To-do-List"
       />
+
+      <SmallProject />
     </>
   );
 };
