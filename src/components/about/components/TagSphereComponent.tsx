@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { TagSphere } from "react-tag-sphere";
 import styled from "styled-components";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import {
   TypescriptIcon,
   JavascriptIcon,
@@ -93,6 +94,7 @@ export const TagSphereComponent = () => {
   // }, [firstNum]);
 
   const [showImages, setShowImages] = useState(true);
+  const { height, width } = useWindowDimensions();
 
   function getTags() {
     //TODO testing, replace with inline return
@@ -126,6 +128,11 @@ export const TagSphereComponent = () => {
         fullHeight={true}
         tags={getTags()}
       />
+      {width < 1020 && (
+        <p style={{ fontStyle: "italic", marginTop: "-50px" }}>
+          Pssst. I'm clickable 😉
+        </p>
+      )}
     </SphereWrapper>
   );
 };
@@ -134,4 +141,8 @@ const SphereWrapper = styled.div`
   aspect-ratio: 1;
   width: 600px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
