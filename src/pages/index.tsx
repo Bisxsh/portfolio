@@ -41,10 +41,13 @@ const PageContainer = styled.div`
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 80vw;
+    width: 100vw;
+    padding: 0 20vw;
     z-index: 999;
     background-color: var(--color-code-bg);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
   .hidden {
@@ -55,6 +58,12 @@ const PageContainer = styled.div`
     display: block;
     padding: 10px;
     padding-left: 30px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .navbar-container {
+      padding: 0;
+    }
   }
 
   @media only screen and (min-width: 16000px) {

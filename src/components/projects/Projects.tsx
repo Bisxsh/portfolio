@@ -41,7 +41,11 @@ const Projects = () => {
         dribbble="https://dribbble.com/shots/18943466-To-do-List"
       />
 
-      <SmallProject />
+      <SmallProject
+        title="WhosThatPixelmon"
+        description="A ChatGame plugin for Pixelmon to mimic the 'Whos that Pokemon' intervals from the show."
+        technologies="Java · Gradle"
+      />
     </>
   );
 };

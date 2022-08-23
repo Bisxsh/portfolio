@@ -24,6 +24,12 @@ const SmallProject = (props: any) => {
   );
 };
 
-const SmallProjectContainer = styled.div``;
+const SmallProjectContainer = styled.div`
+  width: 300px;
+  aspect-ratio: 1;
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  padding: 30px;
+`;
 
 export default SmallProject;
