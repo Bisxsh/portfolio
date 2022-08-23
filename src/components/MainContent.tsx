@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import About from "./about/About";
-import Heading from "./heading";
 import Hero from "./Hero/Hero";
+import Projects from "./projects/Projects";
 
 const MainContent = () => {
   return (
     <MainContentWrapper>
       <Hero />
       <About />
+      <Projects />
     </MainContentWrapper>
   );
 };
 
 const MainContentWrapper = styled.div`
-  overflow-y: hidden;
+  overflow: hidden;
 `;
 
 export default MainContent;

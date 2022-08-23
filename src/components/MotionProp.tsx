@@ -27,7 +27,6 @@ export function EnterFromRight({ delay }: any) {
 }
 
 export function EnterWithFade({ delay }: any) {
-  console.log(delay);
   return {
     initial: { y: 40, opacity: 0 },
     whileInView: { y: 0, opacity: 1 },

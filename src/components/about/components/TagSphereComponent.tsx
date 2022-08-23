@@ -95,12 +95,15 @@ export const TagSphereComponent = () => {
   const [showImages, setShowImages] = useState(true);
 
   function getTags() {
-    return skillsObjects
+    //TODO testing, replace with inline return
+    let test = skillsObjects
       .map(s => {
         if (showImages) return s.imageComponent;
         return s.textComponent;
       })
       .filter(n => n != null);
+    console.log(test);
+    return test;
   }
 
   return (
