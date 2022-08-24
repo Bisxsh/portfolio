@@ -63,6 +63,10 @@ const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 400px) {
+    padding: 10px 10px;
+  }
+
   .image-container {
     aspect-ratio: 1;
     width: 40px;
@@ -104,12 +108,13 @@ const NavContainer = styled.ul`
     position: fixed;
     inset: 0 0 70% 40%;
     border-radius: 20px;
-    background-color: var(--color-accent);
+    background-color: var(--color-primary);
+    color: white;
 
-    padding: min(20vh, 10rem) 2em;
+    padding: 10px;
     flex-direction: column;
     z-index: 0;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
   }
 
@@ -132,7 +137,6 @@ const NavContainer = styled.ul`
     font-size: 20px;
   }
   @media screen and (min-width: 2600px) {
-    font-size: 48px;
     margin-inline: 20px;
   }
 `;
