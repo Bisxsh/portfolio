@@ -40,7 +40,7 @@ const ExperienceWrapper = styled.div`
     font-style: italic;
     font-weight: 400;
     font-size: var(--font-lg);
-    margin-top: -10px;
+    margin-top: 0;
   }
 
   .description-list-item {
@@ -54,10 +54,9 @@ const HeadingWrapper = styled.div`
   justify-content: space-between;
 
   .heading {
-    margin-bottom: 0;
+    margin-bottom: 10px;
     font-weight: 400;
     font-size: var(--font-heading);
-    margin-right: 20px;
   }
 
   .date {
