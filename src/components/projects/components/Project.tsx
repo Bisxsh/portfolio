@@ -68,12 +68,13 @@ const ProjectContainer = styled.div`
 
   img {
     max-width: 640px;
+    /* width: 80vw; */
     border-radius: 10px;
   }
 
   .heading {
     font-weight: 400;
-    font-size: 32px;
+    font-size: var(--font-heading);
     margin: 0;
     margin-bottom: 20px;
   }

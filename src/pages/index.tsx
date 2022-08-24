@@ -6,6 +6,7 @@ import MainContent from "../components/MainContent";
 import Navbar from "../components/navbar/Navbar";
 //@ts-ignore
 import FooterImage from "../images/footer.svg";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   if (typeof window === `undefined`) {
@@ -47,7 +48,7 @@ const PageContainer = styled.div`
 
   .footer-container {
     width: 100vw;
-    height: 70vh;
+    height: 60vh;
     background: url(${FooterImage});
     background-repeat: no-repeat;
     background-position: bottom;

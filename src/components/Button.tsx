@@ -67,7 +67,7 @@ const LargeButtonComponent = styled(ButtonBase)`
     width: 320px;
     height: 60px;
     border-radius: 20px;
-    font-size: var(--font-lg);
+    font-size: var(--font-xxl);
     margin: 0;
   }
 `;

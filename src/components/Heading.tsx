@@ -41,7 +41,7 @@ const HeadingWrapper: any = styled.div`
   }
 
   .heading {
-    font-size: 128px;
+    font-size: var(--font-section-heading);
     line-height: 192px;
     margin-bottom: 0;
     margin-top: 50px;

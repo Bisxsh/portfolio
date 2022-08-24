@@ -56,7 +56,8 @@ const HeadingWrapper = styled.div`
   .heading {
     margin-bottom: 0;
     font-weight: 400;
-    font-size: 32px;
+    font-size: var(--font-heading);
+    margin-right: 20px;
   }
 
   .date {

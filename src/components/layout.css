@@ -6,12 +6,14 @@
   --color-secondary: #1d3557;
   --color-accent: #a8dadc;
   --color-code: #8a6534;
-  --font-xxl: 24px;
-  --font-xl: 20px;
-  --font-lg: 18px;
-  --font-md: 16px;
-  --font-sm: 14px;
-  --font-sx: 12px;
+  --font-section-heading: 70px;
+  --font-heading: 20px;
+  --font-xxl: 16px;
+  --font-xl: 14px;
+  --font-lg: 12px;
+  --font-md: 10px;
+  --font-sm: 8px;
+  --font-sx: 6px;
   --line-height-loose: 1.75;
   --line-height-normal: 1.5;
   --line-height-dense: 1.1;
@@ -235,12 +237,26 @@ pre tt:after {
 }
 @media screen and (min-width: 2160px) {
   :root {
+    --font-section-heading: 160px;
+    --font-heading: 50px;
     --font-xxl: 38px;
     --font-xl: 34px;
     --font-lg: 30px;
     --font-md: 28px;
     --font-sm: 26px;
     --font-sx: 24px;
+  }
+  @media screen and (min-width: 800px) {
+    :root {
+      --font-section-heading: 128px;
+      --font-heading: 32px;
+      --font-xxl: 24px;
+      --font-xl: 20px;
+      --font-lg: 18px;
+      --font-md: 16px;
+      --font-sm: 14px;
+      --font-sx: 12px;
+    }
   }
 }
 

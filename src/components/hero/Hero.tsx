@@ -76,7 +76,7 @@ const HeroContainer = styled.div`
     width: 40vw;
 
     @media screen and (max-width: 1024px) {
-      margin-top: 10vh;
+      /* margin-top: 10vh; */
     }
   }
 
@@ -91,6 +91,10 @@ const HeroContainer = styled.div`
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     justify-content: center;
+
+    .hero--image {
+      margin-top: 5vh;
+    }
   }
 `;
 
