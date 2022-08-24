@@ -5,7 +5,6 @@ import { EnterWithFade } from "../MotionProp";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import ConfirmableButton from "./components/ConfirmableButton";
-// import ConfirmableButton from "./components/ConfirmableButton";
 
 const Email = () => {
   const {
@@ -26,6 +25,7 @@ const Email = () => {
   const textAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value);
   };
+  const [messageSent, setMessageSent] = useState(false);
 
   function constructEmail(data) {
     return {
@@ -39,6 +39,9 @@ const Email = () => {
   const sendEmail = e => {
     console.log(e);
     console.log(message);
+
+    if (messageSent) return;
+    setMessageSent(true);
 
     return emailjs.send(
       "service_xasw9ak",
