@@ -105,7 +105,7 @@ const EmailContainer = styled.div`
   width: 60vw;
   background-color: white;
   border-radius: 10px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: var(--standard-shadow);
   transform: translateY(200px);
   z-index: 1;
 

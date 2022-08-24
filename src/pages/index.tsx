@@ -78,7 +78,7 @@ const PageContainer = styled.div`
     background-color: var(--color-code-bg);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: var(--standard-shadow);
   }
 
   .email {

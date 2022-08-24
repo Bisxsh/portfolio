@@ -20,7 +20,7 @@ const ConfirmableButton = (props: any) => {
     <ButtonContainer>
       <button ref={btn} onClick={handleClick}>
         <div className="text-container">
-          <p ref={btnText}>Submit</p>
+          <p ref={btnText}>Send</p>
           {props.children}
         </div>
 
@@ -64,7 +64,7 @@ const ButtonContainer = styled.div`
     font-size: 22px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--standard-shadow);
     position: relative;
     overflow: hidden;
     cursor: pointer;
