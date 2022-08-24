@@ -24,7 +24,9 @@ const About = () => {
         </AboutText>
 
         <motion.div {...EnterWithFade({})}>
-          <TagSphereComponent />
+          <ErrorBoundary>
+            <TagSphereComponent />
+          </ErrorBoundary>
         </motion.div>
       </AboutWrapper>
 
