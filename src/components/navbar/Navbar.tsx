@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Button } from "../Button";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { Squash as Hamburger } from "hamburger-react";
+import { EnterWithFade } from "../MotionProp";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const { height, width } = useWindowDimensions();
@@ -26,17 +28,21 @@ const Navbar = () => {
       <nav>
         {menuOpen && (
           <NavContainer>
-            <NavOption>Home</NavOption>
-            <NavOption>About</NavOption>
-            <NavOption>Projects</NavOption>
-            <NavOption>Contact</NavOption>
-            {width > 600 && <Button text="CV" setClassName="nav--button" />}
+            <motion.li {...EnterWithFade({})}>Home</motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.2 })}>About</motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.4 })}>Projects</motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.6 })}>Contact</motion.li>
+            {width > 600 && (
+              <motion.div {...EnterWithFade({ delay: 0.8 })}>
+                <Button text="CV" setClassName="nav--button" />
+              </motion.div>
+            )}
           </NavContainer>
         )}
         {width < 600 && (
-          <div className="nav--menu-button">
+          <motion.div className="nav--menu-button" {...EnterWithFade({})}>
             <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
-          </div>
+          </motion.div>
         )}
       </nav>
     </NavbarContainer>
@@ -78,28 +84,6 @@ const NavbarContainer = styled.div`
   }
 `;
 
-const NavOption = styled.li`
-  background: transparent;
-  margin-inline: 10px;
-  margin-bottom: 0;
-  cursor: pointer;
-
-  -webkit-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
-
-  &:hover {
-    color: var(--color-primary);
-  }
-
-  @media screen and (max-width: 600px) {
-    margin-block: 15px;
-    font-size: 20px;
-  }
-  @media screen and (min-width: 2600px) {
-    font-size: 48px;
-    margin-inline: 20px;
-  }
-`;
 const NavContainer = styled.ul`
   list-style: none;
   display: flex;
@@ -124,5 +108,27 @@ const NavContainer = styled.ul`
     z-index: 0;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  li {
+    background: transparent;
+  margin-inline: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+
+  -webkit-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-block: 15px;
+    font-size: 20px;
+  }
+  @media screen and (min-width: 2600px) {
+    font-size: 48px;
+    margin-inline: 20px;
   }
 `;
