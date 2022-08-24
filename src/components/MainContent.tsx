@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import About from "./about/About";
+import Email from "./email/Email";
 import Hero from "./Hero/Hero";
 import Projects from "./projects/Projects";
 
@@ -10,6 +11,7 @@ const MainContent = () => {
       <Hero />
       <About />
       <Projects />
+      <Email />
     </MainContentWrapper>
   );
 };
