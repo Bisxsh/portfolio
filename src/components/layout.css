@@ -243,3 +243,24 @@ pre tt:after {
     --font-sx: 24px;
   }
 }
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #457b9d #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #457b9d;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}

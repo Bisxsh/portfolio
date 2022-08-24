@@ -11,7 +11,6 @@ const MainContent = () => {
       <Hero />
       <About />
       <Projects />
-      <Email />
     </MainContentWrapper>
   );
 };

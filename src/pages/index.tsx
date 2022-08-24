@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Email from "../components/email/Email";
 import Footer from "../components/footer/Footer";
 import MainContent from "../components/MainContent";
 import Navbar from "../components/navbar/Navbar";
@@ -26,6 +27,10 @@ const IndexPage = () => {
         <MainContent />
       </div>
 
+      <div className="email">
+        <Email />
+      </div>
+
       <div className="footer-container">
         <Footer />
       </div>
@@ -47,6 +52,7 @@ const PageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: end;
+    z-index: -1;
   }
 
   .content {
@@ -75,6 +81,13 @@ const PageContainer = styled.div`
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
 
+  .email {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .hidden {
     transform: translateY(-200px);
   }
@@ -92,15 +105,15 @@ const PageContainer = styled.div`
   }
 
   @media only screen and (min-width: 16000px) {
-    /* margin: 0 15vw;
+    margin: 0 15vw;
     .footer-image {
       margin: 0;
-    } */
+    }
     grid-template-columns: 15vw 1fr 15vw;
   }
 
   @media only screen and (min-width: 2000px) {
-    /* padding: 0 10vw; */
+    padding: 0 10vw;
     .footer-image {
       padding: 0;
     }
