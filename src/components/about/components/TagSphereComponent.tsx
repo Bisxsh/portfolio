@@ -128,11 +128,12 @@ export const TagSphereComponent = () => {
         fullHeight={true}
         tags={getTags()}
       />
-      {width < 1020 && (
-        <p style={{ fontStyle: "italic", marginTop: "-50px" }}>
-          Pssst. I'm clickable 😉
-        </p>
-      )}
+      {width ||
+        (0 < 1020 && (
+          <p style={{ fontStyle: "italic", marginTop: "-50px" }}>
+            Pssst. I'm clickable 😉
+          </p>
+        ))}
     </SphereWrapper>
   );
 };

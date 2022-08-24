@@ -146,13 +146,14 @@ const FormContainer = styled.form`
   }
 
   .form--upper {
-    flex-direction: row;
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
   }
 
   .form--small {
-    display: flex;
-    flex-direction: column;
     margin: 30px;
+    width: clamp(10vw, 20vw, auto);
   }
 
   .form--message {

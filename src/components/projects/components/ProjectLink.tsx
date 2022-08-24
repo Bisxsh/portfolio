@@ -8,7 +8,7 @@ import {
   GithubIcon,
   LinkedInIcon,
 } from "../images/links/LinkImage";
-import { motion } from "framer-motion";
+import { isBrowser, motion } from "framer-motion";
 
 export enum ButtonType {
   GITHUB,
@@ -20,6 +20,10 @@ export enum ButtonType {
 }
 
 const ProjectLink = (props: any) => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
+
   function openLink() {
     if (props.link) {
       window.open(props.link, "_blank")?.focus();

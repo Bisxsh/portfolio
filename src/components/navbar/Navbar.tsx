@@ -8,11 +8,15 @@ import { EnterWithFade } from "../MotionProp";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
+
   const { height, width } = useWindowDimensions();
-  const [menuOpen, setMenuOpen] = useState(width > 600 ? true : false);
+  const [menuOpen, setMenuOpen] = useState(width || 0 > 600 ? true : false);
 
   useEffect(() => {
-    setMenuOpen(width > 600 ? true : false);
+    setMenuOpen(width || 0 > 600 ? true : false);
   }, [width]);
 
   function toggleMenu() {
@@ -32,18 +36,20 @@ const Navbar = () => {
             <motion.li {...EnterWithFade({ delay: 0.2 })}>About</motion.li>
             <motion.li {...EnterWithFade({ delay: 0.4 })}>Projects</motion.li>
             <motion.li {...EnterWithFade({ delay: 0.6 })}>Contact</motion.li>
-            {width > 600 && (
-              <motion.div {...EnterWithFade({ delay: 0.8 })}>
-                <Button text="CV" setClassName="nav--button" />
-              </motion.div>
-            )}
+            {width ||
+              (0 > 600 && (
+                <motion.div {...EnterWithFade({ delay: 0.8 })}>
+                  <Button text="CV" setClassName="nav--button" />
+                </motion.div>
+              ))}
           </NavContainer>
         )}
-        {width < 600 && (
-          <motion.div className="nav--menu-button" {...EnterWithFade({})}>
-            <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
-          </motion.div>
-        )}
+        {width ||
+          (0 < 600 && (
+            <motion.div className="nav--menu-button" {...EnterWithFade({})}>
+              <Hamburger toggled={menuOpen} toggle={setMenuOpen} />
+            </motion.div>
+          ))}
       </nav>
     </NavbarContainer>
   );
