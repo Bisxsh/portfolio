@@ -5,6 +5,10 @@ import { motion } from "framer-motion";
 import { EnterWithFade } from "../../MotionProp";
 
 const SmallProject = (props: any) => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
+
   function openExternal() {
     let link: string;
     if (props.github) {

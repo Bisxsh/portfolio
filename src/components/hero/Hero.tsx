@@ -8,9 +8,12 @@ import { EnterFromLeft, EnterFromRight } from "../MotionProp";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Hero = () => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
   const { height, width } = useWindowDimensions();
 
-  let delaybase: number = width < 600 ? 0.5 : 1;
+  let delaybase: number = width || 0 < 600 ? 0.5 : 1;
 
   return (
     <HeroContainer>

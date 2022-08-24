@@ -8,6 +8,9 @@ import Navbar from "../components/navbar/Navbar";
 import FooterImage from "../images/footer.svg";
 
 const IndexPage = () => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
   const [showNavbar, setShowNavbar] = useState(true);
 
   let prevScrollpos = window.pageYOffset;

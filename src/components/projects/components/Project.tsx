@@ -6,12 +6,16 @@ import ProjectLink, { ButtonType } from "./ProjectLink";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 const Project = (props: any) => {
+  if (typeof window === `undefined`) {
+    return <></>;
+  }
+
   let image = <img src={props.imagePath} alt="Project Screenshot" />;
   const { height, width } = useWindowDimensions();
 
   return (
     <ProjectContainer>
-      {(props.left || width < 1200) && (
+      {(props.left || width || 0 < 1200) && (
         <motion.div {...EnterFromLeft({})}>{image}</motion.div>
       )}
 
@@ -44,9 +48,8 @@ const Project = (props: any) => {
         </motion.div>
       </TextContainer>
 
-      {!props.left && width > 1200 && (
-        <motion.div {...EnterFromRight({})}>{image}</motion.div>
-      )}
+      {(!props.left && width) ||
+        (0 > 1200 && <motion.div {...EnterFromRight({})}>{image}</motion.div>)}
     </ProjectContainer>
   );
 };
