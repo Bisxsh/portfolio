@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ProjectLink, { ButtonType } from "./ProjectLink";
+import { motion } from "framer-motion";
+import { EnterWithFade } from "../../MotionProp";
 
 const SmallProject = (props: any) => {
   function openExternal() {
@@ -18,47 +20,55 @@ const SmallProject = (props: any) => {
 
   return (
     <SmallProjectContainer onClick={openExternal}>
-      <h1>{props.title}</h1>
-      <p className="technologies">{props.technologies}</p>
-      <p className="description">{props.description}</p>
+      <motion.div
+        className="project-container"
+        {...EnterWithFade({ delay: props.enterDelay })}
+      >
+        <h1>{props.title}</h1>
+        <p className="technologies">{props.technologies}</p>
+        <p className="description">{props.description}</p>
 
-      <div className="links-container">
-        {props.github && (
-          <ProjectLink
-            className="external-link"
-            buttonType={ButtonType.GITHUB}
-            link={props.github}
-          />
-        )}
-        {props.figma && (
-          <ProjectLink
-            className="external-link"
-            buttonType={ButtonType.FIGMA}
-            link={props.figma}
-          />
-        )}
-        {props.dribbble && (
-          <ProjectLink
-            className="external-link"
-            buttonType={ButtonType.DRIBBLE}
-            link={props.dribbble}
-          />
-        )}
-      </div>
+        <div className="links-container">
+          {props.github && (
+            <ProjectLink
+              className="external-link"
+              buttonType={ButtonType.GITHUB}
+              link={props.github}
+            />
+          )}
+          {props.figma && (
+            <ProjectLink
+              className="external-link"
+              buttonType={ButtonType.FIGMA}
+              link={props.figma}
+            />
+          )}
+          {props.dribbble && (
+            <ProjectLink
+              className="external-link"
+              buttonType={ButtonType.DRIBBLE}
+              link={props.dribbble}
+            />
+          )}
+        </div>
+      </motion.div>
     </SmallProjectContainer>
   );
 };
 
 const SmallProjectContainer = styled.div`
-  width: 100%;
-  background-color: var(--color-secondary);
-  border-radius: 10px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  cursor: pointer;
+  .project-container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+  }
 
   h1 {
     color: white;
@@ -93,6 +103,9 @@ const SmallProjectContainer = styled.div`
     &:hover,
     &:focus-within {
       transform: translateY(-7px);
+      h1 {
+        color: var(--color-accent);
+      }
     }
   }
 `;

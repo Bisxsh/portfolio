@@ -6,6 +6,8 @@ import todoImage from "./images/to-do-list.png";
 import pomodoroImage from "./images/pomodoro-timer.png";
 import SmallProject from "./components/SmallProject";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { LargeButton } from "../Button";
 
 const Projects = () => {
   return (
@@ -46,12 +48,14 @@ const Projects = () => {
           description="A 2D, top-down, adventure game that obtained first place in the Unlock Bath GameJam 2022, hosted by Echo Games CIC."
           technologies="Unity · C#"
           github="https://github.com/bisxsh/unlock-bath"
+          enterDelay={0}
         />
         <SmallProject
           title="WhosThatPixelmon"
           description="A ChatGame plugin for Pixelmon to mimic the 'Whos that Pokemon' intervals from the show."
           technologies="Java · Gradle"
           github="https://github.com/Bisxsh/WhosThatPixelmon"
+          enterDelay={0.2}
         />
         <SmallProject
           title="GeoQuest"
@@ -59,6 +63,7 @@ const Projects = () => {
           technologies="Java · Android Studio · XML · Figma"
           github="https://github.com/bisxsh/BathHack"
           figma="https://www.figma.com/file/V877HFhDf4gcHo1NH09Vni/BathHack22?node-id=0%3A1"
+          enterDelay={0.4}
         />
       </SmallProjectsContainer>
     </ProjectsContainer>
