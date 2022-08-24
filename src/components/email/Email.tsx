@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { EnterWithFade } from "../MotionProp";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 const Email = () => {
   const {
@@ -19,9 +20,39 @@ const Email = () => {
   };
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const [value, setValue] = useState<String>();
+  const [message, setMessage] = useState<String>();
   const textAreaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(event.target.value);
+    setMessage(event.target.value);
+  };
+
+  function constructEmail(data) {
+    return {
+      to_name: "Bisesh",
+      from_name: data.name,
+      message: message,
+      reply_to: data.email,
+    };
+  }
+
+  const sendEmail = e => {
+    console.log(e);
+    console.log(message);
+
+    // emailjs
+    //   .send(
+    //     "service_xasw9ak",
+    //     "template_92mu72i",
+    //     constructEmail(e),
+    //     "bD_OMS6xSFT0bgbHS"
+    //   )
+    //   .then(
+    //     result => {
+    //       console.log(result.text);
+    //     },
+    //     error => {
+    //       console.log(error.text);
+    //     }
+    //   );
   };
 
   useEffect(() => {
@@ -30,7 +61,7 @@ const Email = () => {
       const scrollHeight = textareaRef.current.scrollHeight;
       textareaRef.current.style.height = scrollHeight + "px";
     }
-  }, [value]);
+  }, [message]);
 
   return (
     <EmailContainer>
@@ -38,7 +69,7 @@ const Email = () => {
         <h1>Send me a message!</h1>
         <h2>Got any questions or just want to say hello? Well fire away 🔫</h2>
 
-        <FormContainer onSubmit={handleSubmit(onSubmit)}>
+        <FormContainer onSubmit={handleSubmit(sendEmail)}>
           <div className="form--upper">
             <div className="form--small">
               <label>Your name</label>
@@ -58,7 +89,7 @@ const Email = () => {
               ref={textareaRef}
               onChange={textAreaChange}
             >
-              {value}
+              {message}
             </textarea>
           </div>
 
