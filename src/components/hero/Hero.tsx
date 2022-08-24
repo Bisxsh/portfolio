@@ -4,12 +4,20 @@ import styled from "styled-components";
 import { LargeButton } from "../Button";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { EnterFromLeft } from "../MotionProp";
+import { EnterFromLeft, EnterFromRight } from "../MotionProp";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Hero = () => {
+  const { height, width } = useWindowDimensions();
+
+  let delaybase: number = width < 600 ? 0.5 : 1;
+
   return (
     <HeroContainer>
-      <motion.div className="hero--left" {...EnterFromLeft({})}>
+      <motion.div
+        className="hero--left"
+        {...EnterFromLeft({ delay: delaybase })}
+      >
         <Greeting>Hi there 👋. My name is</Greeting>
         <Name>Bisesh Sitaula.</Name>
         <SubText>
@@ -20,7 +28,7 @@ const Hero = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{
-            delay: 1,
+            delay: delaybase + 1,
             default: {
               duration: 0.7,
             },
@@ -29,13 +37,16 @@ const Hero = () => {
           <LargeButton text="Download CV" setClassName="hero--button" />
         </motion.div>
       </motion.div>
-      <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
-        <StaticImage
-          src="../../images/hero_image.svg"
-          alt="person coding"
-          className="hero--image"
-        />
-      </Tilt>
+
+      <motion.div {...EnterFromRight({ delay: delaybase })}>
+        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
+          <StaticImage
+            src="../../images/hero_image.svg"
+            alt="person coding"
+            className="hero--image"
+          />
+        </Tilt>
+      </motion.div>
     </HeroContainer>
   );
 };

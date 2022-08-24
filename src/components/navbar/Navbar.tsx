@@ -112,15 +112,16 @@ const NavContainer = styled.ul`
 
   li {
     background: transparent;
-  margin-inline: 10px;
-  margin-bottom: 0;
-  cursor: pointer;
+    margin-inline: 10px;
+    margin-bottom: 0;
+    cursor: pointer;
 
-  -webkit-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
+    -webkit-transition: color 0.2s ease-in;
+    transition: color 0.2s ease-in;
 
-  &:hover {
-    color: var(--color-primary);
+    &:hover {
+      color: var(--color-primary);
+    }
   }
 
   @media screen and (max-width: 600px) {
