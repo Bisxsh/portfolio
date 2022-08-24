@@ -27,6 +27,7 @@ const IndexPage = () => {
       <div className={`navbar-container ${showNavbar ? "" : "hidden"}`}>
         <Navbar />
       </div>
+      <div className="content-pusher" />
 
       <div className="content">
         <MainContent />
@@ -45,6 +46,12 @@ const IndexPage = () => {
 
 const PageContainer = styled.div`
   overflow-x: hidden;
+
+  @media screen and (max-height: 750px) {
+    .content-pusher {
+      height: 100px;
+    }
+  }
 
   .footer-container {
     width: 100vw;
@@ -88,6 +95,7 @@ const PageContainer = styled.div`
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     border-radius: 10px;
     box-shadow: var(--standard-shadow);
+    max-height: 15vh;
   }
 
   .email {

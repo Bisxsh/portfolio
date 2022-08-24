@@ -58,12 +58,15 @@ export default Hero;
 
 const HeroContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   margin-bottom: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  @media screen and (max-width: 700px) {
+    margin-top: 10vh;
+  }
 
   .hero--left {
     margin-left: 1vw;
@@ -74,10 +77,6 @@ const HeroContainer = styled.div`
     min-width: 400px;
     aspect-ratio: initial;
     width: 40vw;
-
-    @media screen and (max-width: 1024px) {
-      /* margin-top: 10vh; */
-    }
   }
 
   @media screen and (min-width: 2600px) {
@@ -105,18 +104,8 @@ const Greeting = styled.p`
 `;
 
 const Name = styled.p`
-  font-size: 50px;
+  font-size: var(--font-section-heading);
   color: var(--color-primary);
-
-  @media screen and (min-width: 1600px) {
-    font-size: 60px;
-  }
-  @media screen and (min-width: 2000px) {
-    font-size: 70px;
-  }
-  @media screen and (min-width: 2600px) {
-    font-size: 90px;
-  }
 `;
 
 const SubText = styled.p`
