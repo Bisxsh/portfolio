@@ -36,7 +36,7 @@ const ProjectLink = (props: any) => {
   return (
     <ButtonWrapper onClick={openLink}>
       <motion.div
-        className={`button`}
+        className={`button ${props.className}`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -54,12 +54,15 @@ const ButtonWrapper = styled.div`
     border-radius: 50%;
     background-color: var(--color-primary);
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-inline: 5px;
     cursor: pointer;
   }
 
   img {
     width: 24px;
+    aspect-ratio: 1;
     margin: 0;
   }
 `;

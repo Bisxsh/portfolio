@@ -5,10 +5,11 @@ import Project from "./components/Project";
 import todoImage from "./images/to-do-list.png";
 import pomodoroImage from "./images/pomodoro-timer.png";
 import SmallProject from "./components/SmallProject";
+import styled from "styled-components";
 
 const Projects = () => {
   return (
-    <>
+    <ProjectsContainer>
       <Heading text="Projects" left={false} className="Projects" />
       <Project
         left={true}
@@ -37,17 +38,54 @@ const Projects = () => {
         description="A minimilistic Pomodoro Timer app I created when learning React Native"
         technologies="React Native · Typescript · Expo"
         github="https://github.com/Bisxsh/angular-todo-list"
-        figma="https://www.figma.com/file/GQTxnhir2TgDUJDulqsMWV/Todo-list?node-id=0%3A1"
-        dribbble="https://dribbble.com/shots/18943466-To-do-List"
       />
 
-      <SmallProject
-        title="WhosThatPixelmon"
-        description="A ChatGame plugin for Pixelmon to mimic the 'Whos that Pokemon' intervals from the show."
-        technologies="Java · Gradle"
-      />
-    </>
+      <SmallProjectsContainer>
+        <SmallProject
+          title="UnlockBath"
+          description="A 2D, top-down, adventure game that obtained first place in the Unlock Bath GameJam 2022, hosted by Echo Games CIC."
+          technologies="Unity · C#"
+          github="https://github.com/bisxsh/unlock-bath"
+        />
+        <SmallProject
+          title="WhosThatPixelmon"
+          description="A ChatGame plugin for Pixelmon to mimic the 'Whos that Pokemon' intervals from the show."
+          technologies="Java · Gradle"
+          github="https://github.com/Bisxsh/WhosThatPixelmon"
+        />
+        <SmallProject
+          title="GeoQuest"
+          description="A simple game to help promote fitness through gamification of jogging."
+          technologies="Java · Android Studio · XML · Figma"
+          github="https://github.com/bisxsh/BathHack"
+          figma="https://www.figma.com/file/V877HFhDf4gcHo1NH09Vni/BathHack22?node-id=0%3A1"
+        />
+      </SmallProjectsContainer>
+    </ProjectsContainer>
   );
 };
+
+const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SmallProjectsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 20px;
+  grid-gap: 10px;
+  max-width: 70vw;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+`;
 
 export default Projects;
