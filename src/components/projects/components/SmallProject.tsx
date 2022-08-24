@@ -108,6 +108,10 @@ const SmallProjectContainer = styled.div`
       }
     }
   }
+
+  @media screen and (min-width: 1800px) {
+    max-width: 40vw;
+  }
 `;
 
 export default SmallProject;

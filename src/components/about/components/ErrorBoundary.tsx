@@ -22,10 +22,6 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   public render() {
-    if (this.state.hasError) {
-      return <small>Error loading tagSphere</small>;
-    }
-
     return this.props.children;
   }
 }

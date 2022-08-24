@@ -62,7 +62,7 @@ const Projects = () => {
           enterDelay={0}
         />
         <SmallProject
-          title="WhosThatPixelmon"
+          title="Who's That Pixelmon"
           description="A ChatGame plugin for Pixelmon to mimic the 'Whos that Pokemon' intervals from the show."
           technologies="Java · Gradle"
           github="https://github.com/Bisxsh/WhosThatPixelmon"
@@ -78,6 +78,7 @@ const Projects = () => {
         />
       </SmallProjectsContainer>
       <motion.div
+        className="projects--button"
         onClick={openGithubRepositories}
         initial={{ scale: 0.3, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
@@ -105,21 +106,32 @@ const ProjectsContainer = styled.div`
     color: var(--color-secondary);
     margin-top: 10vh;
   }
+
+  .projects--button {
+    margin: 50px 0;
+  }
 `;
 
 const SmallProjectsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  padding: 20px;
   grid-gap: 10px;
-  max-width: 70vw;
+  width: 100%;
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   @media (max-width: 1080px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 
   @media (min-width: 1080px) {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    max-width: 1900px;
+    padding: 20px;
   }
 `;
 

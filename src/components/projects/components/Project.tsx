@@ -123,6 +123,4 @@ const TextContainer = styled.div`
   }
 `;
 
-const LinksContainer = styled.div``;
-
 export default Project;
