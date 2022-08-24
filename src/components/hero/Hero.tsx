@@ -13,7 +13,7 @@ const Hero = () => {
   }
   const { height, width } = useWindowDimensions();
 
-  let delaybase: number = width || 0 < 600 ? 0.5 : 1;
+  let delaybase: number = (width || 0) < 600 ? 0.5 : 1;
 
   return (
     <HeroContainer>

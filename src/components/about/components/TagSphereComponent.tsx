@@ -97,15 +97,12 @@ export const TagSphereComponent = () => {
   const { height, width } = useWindowDimensions();
 
   function getTags() {
-    //TODO testing, replace with inline return
-    let test = skillsObjects
+    return skillsObjects
       .map(s => {
         if (showImages) return s.imageComponent;
         return s.textComponent;
       })
       .filter(n => n != null);
-    console.log(test);
-    return test;
   }
 
   return (
@@ -128,12 +125,11 @@ export const TagSphereComponent = () => {
         fullHeight={true}
         tags={getTags()}
       />
-      {width ||
-        (0 < 1020 && (
-          <p style={{ fontStyle: "italic", marginTop: "-50px" }}>
-            Pssst. I'm clickable 😉
-          </p>
-        ))}
+      {(width || 0) < 1020 && (
+        <p style={{ fontStyle: "italic", marginTop: "-50px" }}>
+          Pssst. I'm clickable 😉
+        </p>
+      )}
     </SphereWrapper>
   );
 };

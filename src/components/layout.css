@@ -24,7 +24,7 @@
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
-  --standard-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --standard-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -38,7 +38,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: "Poppins";
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;

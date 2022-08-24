@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -18,10 +20,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: [`Poppins`],
-        display: "swap",
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
       },
     },
     `gatsby-transformer-sharp`,

@@ -11,6 +11,7 @@ const IndexPage = () => {
   if (typeof window === `undefined`) {
     return <></>;
   }
+
   const [showNavbar, setShowNavbar] = useState(true);
 
   let prevScrollpos = window.pageYOffset;
