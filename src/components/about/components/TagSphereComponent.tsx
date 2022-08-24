@@ -93,7 +93,7 @@ export const TagSphereComponent = () => {
   //   console.log(imageIndexes);
   // }, [firstNum]);
 
-  const [showImages, setShowImages] = useState(true);
+  const [showImages, setShowImages] = useState(false);
   const { height, width } = useWindowDimensions();
 
   function getTags() {
