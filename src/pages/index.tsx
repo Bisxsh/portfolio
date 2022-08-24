@@ -6,7 +6,9 @@ import MainContent from "../components/MainContent";
 import Navbar from "../components/navbar/Navbar";
 //@ts-ignore
 import FooterImage from "../images/footer.svg";
-import { Helmet } from "react-helmet";
+import { Element } from "react-scroll";
+import { motion } from "framer-motion";
+import { EnterWithFade } from "../components/MotionProp";
 
 const IndexPage = () => {
   if (typeof window === `undefined`) {
@@ -33,9 +35,11 @@ const IndexPage = () => {
         <MainContent />
       </div>
 
-      <div className="email">
-        <Email />
-      </div>
+      <Element name="contact" className="email">
+        <motion.div className="container" {...EnterWithFade({})}>
+          <Email />
+        </motion.div>
+      </Element>
 
       <div className="footer-container">
         <Footer />

@@ -6,6 +6,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { Squash as Hamburger } from "hamburger-react";
 import { EnterWithFade } from "../MotionProp";
 import { motion } from "framer-motion";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   if (typeof window === `undefined`) {
@@ -19,8 +20,8 @@ const Navbar = () => {
     setMenuOpen((width || 0) > 600 ? true : false);
   }, [width]);
 
-  function toggleMenu() {
-    setMenuOpen(o => !o);
+  function scrollToTop() {
+    scroll.scrollToTop();
   }
 
   return (
@@ -32,10 +33,45 @@ const Navbar = () => {
       <nav>
         {menuOpen && (
           <NavContainer>
-            <motion.li {...EnterWithFade({})}>Home</motion.li>
-            <motion.li {...EnterWithFade({ delay: 0.2 })}>About</motion.li>
-            <motion.li {...EnterWithFade({ delay: 0.4 })}>Projects</motion.li>
-            <motion.li {...EnterWithFade({ delay: 0.6 })}>Contact</motion.li>
+            <motion.li {...EnterWithFade({})} onClick={scrollToTop}>
+              Home
+            </motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.2 })}>
+              <Link
+                activeClass="active"
+                className="link"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                About
+              </Link>
+            </motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.4 })}>
+              <Link
+                activeClass="active"
+                className="link"
+                to="projects"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Projects
+              </Link>
+            </motion.li>
+            <motion.li {...EnterWithFade({ delay: 0.6 })}>
+              <Link
+                activeClass="active"
+                className="link"
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Contact
+              </Link>
+            </motion.li>
             {(width || 0) > 600 && (
               <motion.div {...EnterWithFade({ delay: 0.8 })}>
                 <Button text="CV" setClassName="nav--button" />
@@ -123,6 +159,11 @@ const NavContainer = styled.ul`
     margin-inline: 10px;
     margin-bottom: 0;
     cursor: pointer;
+
+    .link {
+      color: inherit;
+      text-decoration: none;
+    }
 
     -webkit-transition: color 0.2s ease-in;
     transition: color 0.2s ease-in;

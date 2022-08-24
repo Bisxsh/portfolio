@@ -3,13 +3,18 @@ import styled from "styled-components";
 import About from "./about/About";
 import Hero from "./Hero/Hero";
 import Projects from "./projects/Projects";
+import { Element } from "react-scroll";
 
 const MainContent = () => {
   return (
     <MainContentWrapper>
       <Hero />
-      <About />
-      <Projects />
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
     </MainContentWrapper>
   );
 };

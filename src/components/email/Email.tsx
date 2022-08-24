@@ -61,41 +61,39 @@ const Email = () => {
 
   return (
     <EmailContainer>
-      <motion.div {...EnterWithFade({})}>
-        <h1>Send me a message!</h1>
-        <h2>Got any questions or just want to say hello? Well fire away 🔫</h2>
+      <h1>Send me a message!</h1>
+      <h2>Got any questions or just want to say hello? Well fire away 🔫</h2>
 
-        <FormContainer onSubmit={handleSubmit(sendEmail)}>
-          <div className="form--upper">
-            <div className="form--small">
-              <label>Your name</label>
-              <input type="text" {...register("name", options.name)} />
-            </div>
-
-            <div className="form--small">
-              <label>Your email</label>
-              <input type="email" {...register("email")} />
-            </div>
+      <FormContainer onSubmit={handleSubmit(sendEmail)}>
+        <div className="form--upper">
+          <div className="form--small">
+            <label>Your name</label>
+            <input type="text" {...register("name", options.name)} />
           </div>
 
-          <div className="form--message">
-            <label>Your message</label>
-            <textarea
-              {...register("message")}
-              ref={textareaRef}
-              onChange={textAreaChange}
-            >
-              {message}
-            </textarea>
+          <div className="form--small">
+            <label>Your email</label>
+            <input type="email" {...register("email")} />
           </div>
+        </div>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <ConfirmableButton onSubmit={handleSubmit(sendEmail)}>
-              <input className="submit-form" type="submit" />
-            </ConfirmableButton>
-          </motion.div>
-        </FormContainer>
-      </motion.div>
+        <div className="form--message">
+          <label>Your message</label>
+          <textarea
+            {...register("message")}
+            ref={textareaRef}
+            onChange={textAreaChange}
+          >
+            {message}
+          </textarea>
+        </div>
+
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <ConfirmableButton onSubmit={handleSubmit(sendEmail)}>
+            <input className="submit-form" type="submit" />
+          </ConfirmableButton>
+        </motion.div>
+      </FormContainer>
     </EmailContainer>
   );
 };
