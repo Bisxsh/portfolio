@@ -9,3 +9,12 @@ export const DribbbleIcon = (
 export const FigmaIcon = (
   <img width={50} src={require("./figma.svg").default} alt="Figma" />
 );
+export const DiscordIcon = (
+  <img width={50} src={require("./discord.svg").default} alt="Discord" />
+);
+export const LinkedInIcon = (
+  <img width={50} src={require("./linkedin.svg").default} alt="LinkedIn" />
+);
+export const EmailIcon = (
+  <img width={50} src={require("./email.svg").default} alt="LinkedIn" />
+);

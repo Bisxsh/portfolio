@@ -1,12 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { DribbbleIcon, FigmaIcon, GithubIcon } from "../images/links/LinkImage";
+import {
+  DiscordIcon,
+  DribbbleIcon,
+  EmailIcon,
+  FigmaIcon,
+  GithubIcon,
+  LinkedInIcon,
+} from "../images/links/LinkImage";
 import { motion } from "framer-motion";
 
 export enum ButtonType {
   GITHUB,
   FIGMA,
   DRIBBLE,
+  DISCORD,
+  LINKED_IN,
+  EMAIL,
 }
 
 const ProjectLink = (props: any) => {
@@ -27,6 +37,15 @@ const ProjectLink = (props: any) => {
       break;
     case ButtonType.DRIBBLE:
       image = DribbbleIcon;
+      break;
+    case ButtonType.DISCORD:
+      image = DiscordIcon;
+      break;
+    case ButtonType.LINKED_IN:
+      image = LinkedInIcon;
+      break;
+    case ButtonType.EMAIL:
+      image = EmailIcon;
       break;
     default:
       image = <></>;

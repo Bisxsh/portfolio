@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Footer from "../components/footer/Footer";
 import MainContent from "../components/MainContent";
 import Navbar from "../components/navbar/Navbar";
+//@ts-ignore
+import FooterImage from "../images/footer.svg";
 
 const IndexPage = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -22,12 +25,34 @@ const IndexPage = () => {
       <div className="content">
         <MainContent />
       </div>
+
+      <div className="footer-container">
+        <Footer />
+      </div>
     </PageContainer>
   );
 };
 
 const PageContainer = styled.div`
+  overflow-x: hidden;
+
+  .footer-container {
+    width: 100vw;
+    height: 70vh;
+    background: url(${FooterImage});
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+
   .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 0 10vw;
 
     @media screen and (max-width: 1500px) {
@@ -67,11 +92,18 @@ const PageContainer = styled.div`
   }
 
   @media only screen and (min-width: 16000px) {
+    /* margin: 0 15vw;
+    .footer-image {
+      margin: 0;
+    } */
     grid-template-columns: 15vw 1fr 15vw;
   }
 
   @media only screen and (min-width: 2000px) {
-    grid-template-columns: 20vw 1fr 20vw;
+    /* padding: 0 10vw; */
+    .footer-image {
+      padding: 0;
+    }
   } ;
 `;
 
