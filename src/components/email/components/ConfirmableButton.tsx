@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
 const ConfirmableButton = (props: any) => {
   const btn = useRef<HTMLButtonElement>(null);
   const btnText = useRef<HTMLParagraphElement>(null);
+  const [messageSent, setMessageSent] = useState(false);
 
   const handleClick = () => {
+    if (messageSent) return;
+
     if (
       props.onSubmit &&
       btnText.current &&
@@ -13,6 +16,7 @@ const ConfirmableButton = (props: any) => {
     ) {
       if (btnText.current) btnText.current.innerHTML = "Thanks";
       if (btn.current) btn.current.classList.add("active");
+      setMessageSent(true);
     }
   };
 
