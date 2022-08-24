@@ -56,6 +56,7 @@ const ButtonContainer = styled.div`
 
   button {
     width: 270px;
+    max-width: 40vw;
     height: 80px;
     border: none;
     outline: none;
@@ -92,6 +93,10 @@ const ButtonContainer = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
       }
+    }
+
+    @media screen and (max-width: 700px) {
+      max-height: 8vh;
     }
   }
 

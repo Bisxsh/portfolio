@@ -58,6 +58,10 @@ const PageContainer = styled.div`
     justify-content: center;
     align-items: end;
     z-index: -1;
+
+    @media screen and (max-width: 700px) {
+      transform: translate(-30px, 30px);
+    }
   }
 
   .content {

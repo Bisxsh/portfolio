@@ -109,6 +109,10 @@ const EmailContainer = styled.div`
   transform: translateY(200px);
   z-index: 1;
 
+  @media screen and (max-width: 700px) {
+    width: 90vw;
+  }
+
   div {
     display: flex;
     flex-direction: column;
