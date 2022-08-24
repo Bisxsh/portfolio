@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { EnterWithFade } from "../MotionProp";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import ConfirmableButton from "./components/ConfirmableButton";
+// import ConfirmableButton from "./components/ConfirmableButton";
 
 const Email = () => {
   const {
@@ -38,21 +40,12 @@ const Email = () => {
     console.log(e);
     console.log(message);
 
-    // emailjs
-    //   .send(
-    //     "service_xasw9ak",
-    //     "template_92mu72i",
-    //     constructEmail(e),
-    //     "bD_OMS6xSFT0bgbHS"
-    //   )
-    //   .then(
-    //     result => {
-    //       console.log(result.text);
-    //     },
-    //     error => {
-    //       console.log(error.text);
-    //     }
-    //   );
+    return emailjs.send(
+      "service_xasw9ak",
+      "template_92mu72i",
+      constructEmail(e),
+      "bD_OMS6xSFT0bgbHS"
+    );
   };
 
   useEffect(() => {
@@ -94,7 +87,9 @@ const Email = () => {
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <input className="submit" type="submit" />
+            <ConfirmableButton onSubmit={handleSubmit(sendEmail)}>
+              <input className="submit-form" type="submit" />
+            </ConfirmableButton>
           </motion.div>
         </FormContainer>
       </motion.div>
@@ -163,15 +158,6 @@ const FormContainer = styled.form`
       width: 100%;
     }
     padding: 0 30px;
-  }
-
-  .submit {
-    margin-top: 40px;
-    padding: 10px 20px;
-    border: 2px solid var(--color-primary);
-    border-radius: 10px;
-    width: 20vw;
-    cursor: pointer;
   }
 
   //Reset styles
