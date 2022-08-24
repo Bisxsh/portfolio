@@ -9,26 +9,24 @@ const Project = (props: any) => {
   let image = <img src={props.imagePath} alt="Project Screenshot" />;
   const { height, width } = useWindowDimensions();
 
-  //TODO fix framer animation
-
   return (
     <ProjectContainer>
       {(props.left || width < 1200) && (
-        <motion.div {...EnterFromLeft}>{image}</motion.div>
+        <motion.div {...EnterFromLeft({})}>{image}</motion.div>
       )}
 
       <TextContainer className={props.left ? "shiftLeft" : "shiftRight"}>
-        <motion.h1 className="heading" {...EnterFromLeft}>
+        <motion.h1 className="heading" {...EnterFromLeft({})}>
           {props.name}
         </motion.h1>
         <motion.div
           className={`description-container ${props.left ? "alignRight" : ""}`}
-          {...EnterFromLeft}
+          {...EnterFromLeft({})}
         >
           <p>{props.description}</p>
         </motion.div>
 
-        <motion.p {...EnterFromLeft}>{props.technologies}</motion.p>
+        <motion.p {...EnterFromLeft({})}>{props.technologies}</motion.p>
 
         <motion.div className="links-container" {...EnterWithFade}>
           {props.github && (
@@ -47,7 +45,7 @@ const Project = (props: any) => {
       </TextContainer>
 
       {!props.left && width > 1200 && (
-        <motion.div {...EnterFromRight}>{image}</motion.div>
+        <motion.div {...EnterFromRight({})}>{image}</motion.div>
       )}
     </ProjectContainer>
   );
