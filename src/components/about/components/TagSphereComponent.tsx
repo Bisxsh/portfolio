@@ -113,7 +113,6 @@ export const TagSphereComponent = () => {
           fontWeight: "400",
           fontSize: "1.2rem",
           fontFamily: "Poppins",
-          zIndex: -1,
         }}
         className="about--sphere"
         blur={true}
