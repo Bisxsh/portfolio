@@ -66,12 +66,12 @@ const Email = () => {
 
       <FormContainer onSubmit={handleSubmit(sendEmail)}>
         <div className="form--upper">
-          <div className="form--small">
+          <div className="form--small left">
             <label>Your name</label>
             <input type="text" {...register("name", options.name)} />
           </div>
 
-          <div className="form--small">
+          <div className="form--small right">
             <label>Your email</label>
             <input type="email" {...register("email")} />
           </div>
@@ -148,14 +148,29 @@ const FormContainer = styled.form`
   }
 
   .form--upper {
+    width: 100%;
+    padding: 0 30px;
+    margin-bottom: 30px;
+
     @media screen and (min-width: 1200px) {
       flex-direction: row;
+      .left {
+        margin-right: 30px;
+      }
+
+      .right {
+        margin-left: 30px;
+      }
     }
   }
 
   .form--small {
-    margin: 30px;
-    width: clamp(10vw, 20vw, auto);
+    width: 100%;
+    margin-block: 10px;
+    &,
+    & > input {
+      width: 100%;
+    }
   }
 
   .form--message {
