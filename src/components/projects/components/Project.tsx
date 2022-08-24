@@ -16,7 +16,9 @@ const Project = (props: any) => {
   return (
     <ProjectContainer>
       {(props.left || (width || 0) < 1200) && (
-        <motion.div {...EnterFromLeft({})}>{image}</motion.div>
+        <motion.div className="main-image-container" {...EnterFromLeft({})}>
+          {image}
+        </motion.div>
       )}
 
       <TextContainer className={props.left ? "shiftLeft" : "shiftRight"}>
@@ -49,7 +51,9 @@ const Project = (props: any) => {
       </TextContainer>
 
       {!props.left && (width || 0) > 1200 && (
-        <motion.div {...EnterFromRight({})}>{image}</motion.div>
+        <motion.div className="main-image-container" {...EnterFromRight({})}>
+          {image}
+        </motion.div>
       )}
     </ProjectContainer>
   );
@@ -66,9 +70,9 @@ const ProjectContainer = styled.div`
     align-items: center;
   }
 
-  img {
+  .main-image-container > img {
     max-width: 640px;
-    /* width: 80vw; */
+    width: 80vw;
     border-radius: 10px;
   }
 
@@ -108,6 +112,7 @@ const TextContainer = styled.div`
     color: var(--color-text);
     padding: 30px 30px;
     width: 500px;
+    max-width: 80vw;
 
     p {
       margin: 0;

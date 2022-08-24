@@ -72,7 +72,7 @@ const ProjectLink = (props: any) => {
 const ButtonWrapper = styled.div`
   .button {
     background-color: var(--color-primary);
-    padding: 15px;
+    padding: min(2vw, 15px);
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: var(--color-primary);
@@ -85,6 +85,7 @@ const ButtonWrapper = styled.div`
 
   img {
     width: 24px;
+    max-width: 4vw;
     aspect-ratio: 1;
     margin: 0;
   }
