@@ -103,6 +103,7 @@ const SmallProjectContainer = styled.div`
     &:hover,
     &:focus-within {
       transform: translateY(-7px);
+      box-shadow: var(--color-accent) 0px 7px 12px 0px;
       h1 {
         color: var(--color-accent);
       }
