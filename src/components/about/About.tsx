@@ -23,7 +23,9 @@ const About = () => {
           </motion.p>
         </AboutText>
 
-        <TagSphereComponent />
+        <motion.div {...EnterWithFade({})}>
+          <TagSphereComponent />
+        </motion.div>
       </AboutWrapper>
 
       <Heading text="Experience" left={true} />
