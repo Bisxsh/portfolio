@@ -8,8 +8,15 @@ import SmallProject from "./components/SmallProject";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { LargeButton } from "../Button";
+import { EnterWithFade } from "../MotionProp";
 
 const Projects = () => {
+  function openGithubRepositories() {
+    window
+      .open("https://github.com/bisxsh?tab=repositories", "_blank")
+      ?.focus();
+  }
+
   return (
     <ProjectsContainer>
       <Heading text="Projects" left={false} className="Projects" />
@@ -42,6 +49,10 @@ const Projects = () => {
         github="https://github.com/Bisxsh/angular-todo-list"
       />
 
+      <motion.h2 className="small-projects-heading" {...EnterWithFade({})}>
+        Some other projects I have worked on 💻
+      </motion.h2>
+
       <SmallProjectsContainer>
         <SmallProject
           title="UnlockBath"
@@ -66,6 +77,20 @@ const Projects = () => {
           enterDelay={0.4}
         />
       </SmallProjectsContainer>
+      <motion.div
+        onClick={openGithubRepositories}
+        initial={{ scale: 0.3, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          delay: 0.5,
+          default: {
+            duration: 0.7,
+          },
+        }}
+      >
+        <LargeButton text="🔎 See More 🔍" setClassName="hero--button" />
+      </motion.div>
     </ProjectsContainer>
   );
 };
@@ -75,6 +100,11 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .small-projects-heading {
+    color: var(--color-secondary);
+    margin-top: 10vh;
+  }
 `;
 
 const SmallProjectsContainer = styled.div`

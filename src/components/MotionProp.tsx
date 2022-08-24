@@ -5,7 +5,7 @@ export function EnterFromLeft({ delay }: any) {
     viewport: { once: true },
     transition: {
       default: {
-        delay: delay ? delay : 0,
+        delay: delay ? delay + 1 : 1,
         duration: 0.7,
       },
     },
@@ -19,7 +19,7 @@ export function EnterFromRight({ delay }: any) {
     viewport: { once: true },
     transition: {
       default: {
-        delay: delay ? delay : 0,
+        delay: delay ? delay + 1 : 1,
         duration: 0.7,
       },
     },
@@ -33,7 +33,7 @@ export function EnterWithFade({ delay }: any) {
     viewport: { once: true },
     transition: {
       default: {
-        delay: delay ? delay : 0,
+        delay: delay ? delay + 1 : 1,
         duration: 0.7,
       },
     },

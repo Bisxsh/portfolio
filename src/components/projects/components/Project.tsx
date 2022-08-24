@@ -28,7 +28,7 @@ const Project = (props: any) => {
 
         <motion.p {...EnterFromLeft({})}>{props.technologies}</motion.p>
 
-        <motion.div className="links-container" {...EnterWithFade}>
+        <motion.div className="links-container" {...EnterWithFade({})}>
           {props.github && (
             <ProjectLink buttonType={ButtonType.GITHUB} link={props.github} />
           )}
