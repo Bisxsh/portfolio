@@ -15,7 +15,8 @@ const About = () => {
         <AboutText>
           <motion.p {...EnterWithFade({})}>
             Hey! My name is Bisesh and I am currently a student at the
-            University of Bath.
+            University of Bath. I love designing and creating for the web, which
+            is why I'm trying to learn as much about it as I can.
           </motion.p>
           <motion.p {...EnterWithFade({})}>
             Outside of coding (and learning to code), you’ll find me playing

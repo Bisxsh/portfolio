@@ -62,7 +62,7 @@ const Email = () => {
   return (
     <EmailContainer>
       <h1>Send me a message!</h1>
-      <h2>Got any questions or just want to say hello? Well fire away 🔫</h2>
+      <h2>Got any questions or just want to say hello? Go ahead! 😄</h2>
 
       <FormContainer onSubmit={handleSubmit(sendEmail)}>
         <div className="form--upper">

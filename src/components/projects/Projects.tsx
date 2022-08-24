@@ -4,6 +4,7 @@ import Heading from "../heading";
 import Project from "./components/Project";
 import todoImage from "./images/to-do-list.png";
 import pomodoroImage from "./images/pomodoro-timer.png";
+import portfolioImage from "./images/portfolio.png";
 import SmallProject from "./components/SmallProject";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -22,13 +23,13 @@ const Projects = () => {
       <Heading text="Projects" left={false} className="Projects" />
       <Project
         left={true}
-        imagePath={todoImage}
-        name="To-Do List"
-        description="A simple to-do list app I made when learning Angular and CSS animations"
-        technologies="Angular · Typescript · Material-UI"
-        github="https://github.com/Bisxsh/angular-todo-list"
-        figma="https://www.figma.com/file/GQTxnhir2TgDUJDulqsMWV/Todo-list?node-id=0%3A1"
-        dribbble="https://dribbble.com/shots/18943466-To-do-List"
+        imagePath={portfolioImage}
+        name="Portfolio"
+        description="The website I created as a digital portfolio. The very one you are on right now!"
+        technologies="React · Gatsby · Framer Motion · Styled Components"
+        github="https://github.com/Bisxsh/portfolio"
+        figma="https://www.figma.com/file/kJ8vsEHC56hF3RcfFoKTrK/Website?node-id=0%3A1"
+        dribbble="https://dribbble.com/shots/19211487-Frontend-developer-portfolio"
       />
       <Project
         left={false}
