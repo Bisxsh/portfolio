@@ -65,6 +65,7 @@ export function LargeButton(props: any) {
 const LargeButtonComponent = styled(ButtonBase)`
   .large {
     width: 320px;
+    max-width: 70vw;
     height: 60px;
     border-radius: 20px;
     font-size: var(--font-xxl);

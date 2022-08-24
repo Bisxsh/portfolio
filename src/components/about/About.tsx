@@ -52,6 +52,10 @@ const AboutText = styled.div`
   font-size: var(--font-xl);
   color: var(--color-secondary);
   max-width: 40vw;
+
+  @media screen and (max-width: 700px) {
+    max-width: 80vw;
+  }
 `;
 
 const AboutWrapper = styled.div`
