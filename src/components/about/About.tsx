@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import { TagSphereComponent } from "./components/TagSphereComponent";
 import { motion } from "framer-motion";
 import { EnterWithFade } from "../MotionProp";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const About = () => {
   return (
