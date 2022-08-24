@@ -248,7 +248,7 @@ pre tt:after {
   }
   @media screen and (min-width: 800px) {
     :root {
-      --font-section-heading: 128px;
+      --font-section-heading: 96px;
       --font-heading: 32px;
       --font-xxl: 24px;
       --font-xl: 20px;
