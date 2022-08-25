@@ -26,9 +26,13 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <div className="image-container">
+      <motion.div
+        {...EnterWithFade({ delay: 0.2 })}
+        className="image-container"
+        onClick={scrollToTop}
+      >
         <StaticImage src="../../images/logo.png" alt="logo" />
-      </div>
+      </motion.div>
 
       <nav>
         {menuOpen && (
