@@ -109,6 +109,7 @@ const EmailContainer = styled.div`
 
   @media screen and (max-width: 700px) {
     width: 90vw;
+    transform: translateY(0px);
   }
 
   div {
