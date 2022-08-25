@@ -89,7 +89,7 @@ const Email = () => {
         </div>
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <ConfirmableButton onSubmit={handleSubmit(sendEmail)}>
+          <ConfirmableButton sent={messageSent}>
             <input className="submit-form" type="submit" />
           </ConfirmableButton>
         </motion.div>

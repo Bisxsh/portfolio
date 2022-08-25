@@ -1,26 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
-const ConfirmableButton = (props: any) => {
+interface PropType {
+  children: JSX.Element | JSX.Element[];
+  sent: boolean;
+}
+
+const ConfirmableButton = (props: PropType) => {
   const btn = useRef<HTMLButtonElement>(null);
   const btnText = useRef<HTMLParagraphElement>(null);
-
-  const handleClick = () => {
-    if (
-      props.onSubmit &&
-      btnText.current &&
-      btnText.current.innerHTML !== "Thanks"
-    ) {
-      if (btnText.current) btnText.current.innerHTML = "Thanks";
-      if (btn.current) btn.current.classList.add("active");
-    }
-  };
+  console.log(props.sent);
 
   return (
     <ButtonContainer>
-      <button ref={btn} onClick={handleClick}>
+      <button ref={btn} className={props.sent ? "active" : ""}>
         <div className="text-container">
-          <p ref={btnText}>Send</p>
+          <p ref={btnText}>{props.sent ? "Sent 🕊" : "Send"}</p>
           {props.children}
         </div>
 
