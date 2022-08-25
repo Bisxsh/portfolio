@@ -9,6 +9,7 @@ import FooterImage from "../images/footer.svg";
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 import { EnterWithFade } from "../components/MotionProp";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   if (typeof window === `undefined`) {
@@ -25,26 +26,31 @@ const IndexPage = () => {
   };
 
   return (
-    <PageContainer>
-      <div className={`navbar-container ${showNavbar ? "" : "hidden"}`}>
-        <Navbar />
-      </div>
-      <div className="content-pusher" />
+    <>
+      <Helmet>
+        <title>Bisesh Sitaula</title>
+      </Helmet>
+      <PageContainer>
+        <div className={`navbar-container ${showNavbar ? "" : "hidden"}`}>
+          <Navbar />
+        </div>
+        <div className="content-pusher" />
 
-      <div className="content">
-        <MainContent />
-      </div>
+        <div className="content">
+          <MainContent />
+        </div>
 
-      <Element name="contact" className="email">
-        <motion.div className="container" {...EnterWithFade({})}>
-          <Email />
-        </motion.div>
-      </Element>
+        <Element name="contact" className="email">
+          <motion.div className="container" {...EnterWithFade({})}>
+            <Email />
+          </motion.div>
+        </Element>
 
-      <div className="footer-container">
-        <Footer />
-      </div>
-    </PageContainer>
+        <div className="footer-container">
+          <Footer />
+        </div>
+      </PageContainer>
+    </>
   );
 };
 
