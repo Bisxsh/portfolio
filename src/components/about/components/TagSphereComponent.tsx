@@ -105,21 +105,29 @@ export const TagSphereComponent = () => {
       .filter(n => n != null);
   }
 
+  const styles = {
+    color: "#457b9d",
+    fontWeight: "400",
+    fontSize: "1.2rem",
+    fontFamily: "Poppins",
+    zIndex:
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      (width || 0) < 720
+        ? -1
+        : 0,
+  };
+
   return (
     <SphereWrapper onClick={() => setShowImages(i => !i)}>
       <TagSphere
-        style={{
-          color: "#457b9d",
-          fontWeight: "400",
-          fontSize: "1.2rem",
-          fontFamily: "Poppins",
-        }}
+        style={styles}
         className="about--sphere"
         blur={true}
         blurMultiplier={0.2}
-        keepRollingAfterMouseOut={false}
+        keepRollingAfterMouseOut={true}
         userSelect={true}
-        initialSpeed={2}
+        initialSpeed={16}
         maxSpeed={2}
         fullWidth={true}
         fullHeight={true}
@@ -137,6 +145,7 @@ export const TagSphereComponent = () => {
 const SphereWrapper = styled.div`
   aspect-ratio: 1;
   width: 600px;
+  max-width: 70vw;
   cursor: pointer;
   display: flex;
   flex-direction: column;
