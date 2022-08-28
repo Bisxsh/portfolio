@@ -13,6 +13,8 @@ const Project = (props: any) => {
   let image = <img src={props.imagePath} alt="Project Screenshot" />;
   const { height, width } = useWindowDimensions();
 
+  const entrance = props.left ? EnterFromRight({}) : EnterFromLeft({});
+
   return (
     <ProjectContainer>
       {(props.left || (width || 0) < 1200) && (
@@ -22,19 +24,19 @@ const Project = (props: any) => {
       )}
 
       <TextContainer className={props.left ? "shiftLeft" : "shiftRight"}>
-        <motion.h1 className="heading" {...EnterFromLeft({})}>
+        <motion.h1 className="heading" {...entrance}>
           {props.name}
         </motion.h1>
         <motion.div
           className={`description-container ${props.left ? "alignRight" : ""}`}
-          {...EnterFromLeft({})}
+          {...entrance}
         >
           <p>{props.description}</p>
         </motion.div>
 
-        <motion.p {...EnterFromLeft({})}>{props.technologies}</motion.p>
+        <motion.p {...entrance}>{props.technologies}</motion.p>
 
-        <motion.div className="links-container" {...EnterWithFade({})}>
+        <motion.div className="links-container" {...entrance}>
           {props.github && (
             <ProjectLink buttonType={ButtonType.GITHUB} link={props.github} />
           )}
