@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { EnterFromLeft, EnterFromRight, EnterWithFade } from "../../MotionProp";
+import { EnterFromLeft, EnterFromRight } from "../../MotionProp";
 import styled from "styled-components";
 import ProjectLink, { ButtonType } from "./ProjectLink";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";

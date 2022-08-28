@@ -115,9 +115,8 @@ const ProjectsContainer = styled.div`
 
 const SmallProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  width: 100%;
 
   & > * {
     display: flex;
@@ -125,12 +124,11 @@ const SmallProjectsContainer = styled.div`
     align-items: center;
   }
 
-  @media (max-width: 1080px) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  @media screen and (max-width: 750px) {
+    grid-template-columns: repeat(1, minmax(250px, 400px));
   }
 
   @media (min-width: 1080px) {
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     max-width: 1900px;
     padding: 20px;
   }
