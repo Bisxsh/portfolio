@@ -55,7 +55,7 @@ const IndexPage = () => {
 };
 
 const PageContainer = styled.div`
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media screen and (max-height: 750px) {
     .content-pusher {
