@@ -67,7 +67,7 @@ const ProjectContainer = styled.div`
   color: var(--color-secondary);
   width: 100%;
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
   }
@@ -85,7 +85,7 @@ const ProjectContainer = styled.div`
     margin-bottom: 20px;
   }
 
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1200px) {
     .shiftRight {
       transform: translateX(60px);
       align-items: flex-start;
@@ -102,7 +102,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1200px) {
     .alignRight {
       text-align: end;
     }
@@ -127,7 +127,7 @@ const TextContainer = styled.div`
     align-items: center;
   }
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1200px) {
     .links-container {
       justify-content: start;
       margin-bottom: 40px;
