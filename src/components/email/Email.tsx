@@ -90,7 +90,11 @@ const Email = () => {
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <ConfirmableButton sent={messageSent}>
-            <input className="submit-form" type="submit" />
+            <input
+              className="submit-form"
+              type="submit"
+              style={{ cursor: "pointer" }}
+            />
           </ConfirmableButton>
         </motion.div>
       </FormContainer>
